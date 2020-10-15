@@ -1,0 +1,1617 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Kotest test framework for Kotlin.">
+      
+      
+        <link rel="canonical" href="https://kotest.io/extensions/">
+      
+      
+        <meta name="author" content="Kotest organization">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Extensions - Kotest Test Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Heebo",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-177425497-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="deep-orange">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#extensions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://kotest.io" title="Kotest Test Framework" class="md-header-nav__button md-logo" aria-label="Kotest Test Framework">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Kotest Test Framework
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Extensions
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/kotest/kotest/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Kotest
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://kotest.io" title="Kotest Test Framework" class="md-nav__button md-logo" aria-label="Kotest Test Framework">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Kotest Test Framework
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/kotest/kotest/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Kotest
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Overview
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Overview" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Overview
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../quick_start/" class="md-nav__link">
+      Quick start
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../changelog/" class="md-nav__link">
+      Changelog
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Framework
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Framework" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Framework
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../styles/" class="md-nav__link">
+      Styles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intellij/" class="md-nav__link">
+      Intellij plugin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Extensions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Extensions
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#allure" class="md-nav__link">
+    Allure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrow" class="md-nav__link">
+    Arrow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spring" class="md-nav__link">
+    Spring
+  </a>
+  
+    <nav class="md-nav" aria-label="Spring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-injection" class="md-nav__link">
+    Field Injection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructor-injection" class="md-nav__link">
+    Constructor Injection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-clases" class="md-nav__link">
+    Final Clases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ktor" class="md-nav__link">
+    Ktor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#koin" class="md-nav__link">
+    Koin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robolectric" class="md-nav__link">
+    Robolectric
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compilation-test" class="md-nav__link">
+    Compilation test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-extensions" class="md-nav__link">
+    System Extensions
+  </a>
+  
+    <nav class="md-nav" aria-label="System Extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-environment" class="md-nav__link">
+    System Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-property-extension" class="md-nav__link">
+    System Property Extension
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-security-manager" class="md-nav__link">
+    System Security Manager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-exit-extensions" class="md-nav__link">
+    System Exit Extensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-stdout-no-stderr-listeners" class="md-nav__link">
+    No-stdout / no-stderr listeners
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localetimezone-listeners" class="md-nav__link">
+    Locale/Timezone listeners
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#current-instant-listeners" class="md-nav__link">
+    Current instant listeners
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#junit-format-xml-report" class="md-nav__link">
+    JUnit Format XML Report
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mockserver" class="md-nav__link">
+    MockServer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testcontainers" class="md-nav__link">
+    TestContainers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../listeners/" class="md-nav__link">
+      Listeners
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data_driven_testing/" class="md-nav__link">
+      Data driven testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../test_ordering/" class="md-nav__link">
+      Test ordering
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../spec_ordering/" class="md-nav__link">
+      Spec ordering
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../conditional_evaluation/" class="md-nav__link">
+      Conditional evaluation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../isolation_mode/" class="md-nav__link">
+      Isolation mode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../timeout/" class="md-nav__link">
+      Timeouts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tags/" class="md-nav__link">
+      Tags
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../test_case_config/" class="md-nav__link">
+      Test Case Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nondeterministic_testing/" class="md-nav__link">
+      Nondeterministic testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../test_factories/" class="md-nav__link">
+      Test factories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project_config/" class="md-nav__link">
+      Project config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tempfile/" class="md-nav__link">
+      Temporary Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../autoclose/" class="md-nav__link">
+      Autoclose
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mocks/" class="md-nav__link">
+      Mocks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mpp/" class="md-nav__link">
+      Mpp
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../plugins/" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Assertions
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Assertions" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Assertions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assertions/" class="md-nav__link">
+      Assertions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/" class="md-nav__link">
+      Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/core/" class="md-nav__link">
+      Core Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/arrow/" class="md-nav__link">
+      Arrow Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/ktor/" class="md-nav__link">
+      Ktor Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/json/" class="md-nav__link">
+      Json Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../inspectors/" class="md-nav__link">
+      Inspectors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clues/" class="md-nav__link">
+      Clues
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Property Testing
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Property Testing" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Property Testing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../property_testing/" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../property_ops/" class="md-nav__link">
+      Generator Operations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../property_generators/" class="md-nav__link">
+      List of Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom_gens/" class="md-nav__link">
+      Custom Generators
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/kotest/kotest/issues" class="md-nav__link">
+      Issues
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      More
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="More" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        More
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../blogs/" class="md-nav__link">
+      Blogs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../third_party_integrations/" class="md-nav__link">
+      Third party integrations
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#allure" class="md-nav__link">
+    Allure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrow" class="md-nav__link">
+    Arrow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spring" class="md-nav__link">
+    Spring
+  </a>
+  
+    <nav class="md-nav" aria-label="Spring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-injection" class="md-nav__link">
+    Field Injection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructor-injection" class="md-nav__link">
+    Constructor Injection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-clases" class="md-nav__link">
+    Final Clases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ktor" class="md-nav__link">
+    Ktor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#koin" class="md-nav__link">
+    Koin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robolectric" class="md-nav__link">
+    Robolectric
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compilation-test" class="md-nav__link">
+    Compilation test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-extensions" class="md-nav__link">
+    System Extensions
+  </a>
+  
+    <nav class="md-nav" aria-label="System Extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-environment" class="md-nav__link">
+    System Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-property-extension" class="md-nav__link">
+    System Property Extension
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-security-manager" class="md-nav__link">
+    System Security Manager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-exit-extensions" class="md-nav__link">
+    System Exit Extensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-stdout-no-stderr-listeners" class="md-nav__link">
+    No-stdout / no-stderr listeners
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localetimezone-listeners" class="md-nav__link">
+    Locale/Timezone listeners
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#current-instant-listeners" class="md-nav__link">
+    Current instant listeners
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#junit-format-xml-report" class="md-nav__link">
+    JUnit Format XML Report
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mockserver" class="md-nav__link">
+    MockServer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testcontainers" class="md-nav__link">
+    TestContainers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/kotest/kotest/edit/master/docs/extensions.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="extensions">Extensions</h1>
+<p>Kotest integrates with many libraries and frameworks. This page outlines the extensions maintained by the Kotest team.</p>
+<h2 id="allure">Allure</h2>
+<p><a href="http://allure.qatools.ru">Allure</a> is an open-source framework designed to generate detailed and interactive test reports.
+It works by collecting test data as tests are executed and then compiling that into a final HTML report.</p>
+<p>Kotest provides an extenstion for Allure and full integration instructions are <a href="allure/">here</a>.</p>
+<h2 id="arrow">Arrow</h2>
+<p>The arrow assertion module provives assertions for the functional programming library <a href="https://arrow-kt.io/">arrow-kt</a> for types such as <code>Option</code>, <code>Try</code>, and so on.
+To use this library you need to add <code>kotest-assertions-arrow</code> to your build.</p>
+<p>Here is an example asserting that an <code>Option</code> variable is a <code>Some</code> with a value <code>"Foo"</code>.</p>
+<pre><code class="language-kotlin">val option: Option&lt;String&gt; = ...
+option shouldBe beSome(&quot;foo&quot;)
+</code></pre>
+<p>For the full list of arrow matchers <a href="../matchers/arrow/">click here</a>.</p>
+<p>Additionally, the module provides inspectors that work specifically for the <code>NonEmptyList</code> type.
+For example, we can test that a set of assertions hold only for a single element in a Nel by using the <code>forOne</code> inspector.</p>
+<pre><code class="language-kotlin">val list = NonEmptyList(2, 4, 6, 7,8)
+list.forOne {
+  it.shouldBeOdd()
+}
+</code></pre>
+<p>Other inspectors include <code>forNone</code>, <code>forAll</code>, <code>forExactly(n)</code>, <code>forSome</code> and so on. See the section on <a href="../inspectors/">inspectors</a> for more details.</p>
+<h2 id="spring">Spring</h2>
+<p>Kotest offers a Spring extension that allows you to test code that wires dependencies using Spring.
+To use this extension add the <code>kotest-extensions-spring</code> module to your test compile path.</p>
+<p>In order to let Spring know which configuration class to use, you must annotate your Spec classes with <code>@ContextConfiguration</code>.
+This should point to a class annotated with the Spring <code>@Configuration</code> annotation. Alternatively, you can use <code>@ActiveProfile</code> to
+point to a <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html">specific application context file</a>.</p>
+<p>There are two ways to enable spring wiring depending on if you want to use constructor injection, or field injection.</p>
+<h3 id="field-injection">Field Injection</h3>
+<p>If you wish to use field injection, then the <code>SpringListener</code> must be registered with any
+ Spec that uses spring beans. For example:</p>
+<pre><code class="language-kotlin">@ContextConfiguration(classes = [(TestConfiguration::class)])
+class SpringExampleSpec : WordSpec() {
+
+  override fun listeners() = listOf(SpringListener)
+
+  @Autowired
+  var bean: MyBean? = null
+
+  init {
+    &quot;Spring Extension&quot; should {
+      &quot;have wired up the bean&quot; {
+        bean shouldNotBe null
+      }
+    }
+  }
+}
+</code></pre>
+<p>You could add the <code>SpringListener</code> project wide by registering the listener in <a href="../project_config/">ProjectConfig</a>.</p>
+<h3 id="constructor-injection">Constructor Injection</h3>
+<p>For constructor injection, we use a different implementation called <code>SpringAutowireConstructorExtension</code> which
+ must be registered with <a href="../project_config/">ProjectConfig</a>. This extension will intercept each call to create a Spec instance
+ and will autowire the beans declared in the primary constructor.</p>
+<p>First an example of the project config.</p>
+<pre><code class="language-kotlin">class ProjectConfig : AbstractProjectConfig() {
+  override fun extensions(): List&lt;Extension&gt; = listOf(SpringAutowireConstructorExtension)
+}
+</code></pre>
+<p>And now an example of a test class which requires a service called <code>UserService</code> in its primary constructor. This service
+ class is just a regular spring bean which has been annotated with @Component.</p>
+<pre><code class="language-kotlin">@ContextConfiguration(classes = [(Components::class)])
+class SpringAutowiredConstructorTest(service: UserService) : WordSpec() {
+  init {
+    &quot;SpringListener&quot; should {
+      &quot;have autowired the service&quot; {
+        service.repository.findUser().name shouldBe &quot;system_user&quot;
+      }
+    }
+  }
+}
+</code></pre>
+<h3 id="final-clases">Final Clases</h3>
+<p>When using a final class, you may receive a warning from Kotest:</p>
+<p><code>Using SpringListener on a final class. If any Spring annotation fails to work, try making this class open</code></p>
+<p>If you wish, you can disable this warning by setting the system property <code>kotest.listener.spring.ignore.warning</code> to true.</p>
+<h2 id="ktor">Ktor</h2>
+<p>The <code>kotest-assertions-ktor</code> module provides response matchers for a <a href="" title="https://ktor.io/">Ktor</a> application. There are matchers
+for both <code>TestApplicationResponse</code> if you are using the server side test support, and for <code>HttpResponse</code> if you are using the ktor
+client classes.</p>
+<p>To add Ktor matchers, add the following dependency to your project</p>
+<pre><code class="language-groovy">testImplementation(&quot;io.kotest:kotest-assertions-ktor:${version}&quot;)
+</code></pre>
+<p>An example of using the matchers with the server side test support:</p>
+<pre><code class="language-kotlin">withTestApplication({ module(testing = true) }) {
+   handleRequest(HttpMethod.Get, &quot;/&quot;).apply {
+      response shouldHaveStatus HttpStatusCode.OK
+      response shouldNotHaveContent &quot;failure&quot;
+      response.shouldHaveHeader(name = &quot;Authorization&quot;, value = &quot;Bearer&quot;)
+      response.shouldNotHaveCookie(name = &quot;Set-Cookie&quot;, cookieValue = &quot;id=1234&quot;)
+   }
+}
+</code></pre>
+<p>And an example of using the client support:</p>
+<pre><code class="language-kotlin">val client = HttpClient(CIO)
+val resp = client.post(&quot;http://mydomain.com/foo&quot;)
+response.shouldHaveStatus(HttpStatusCode.OK)
+response.shouldHaveHeader(name = &quot;Authorization&quot;, value = &quot;Bearer&quot;)
+
+</code></pre>
+<h2 id="koin">Koin</h2>
+<p>The <a href="https://insert-koin.io/">Koin DI Framework</a> can be used with Kotest through the <code>KoinListener</code> test listener and its own interface <code>KoinTest</code>.</p>
+<p>To add the listener to your project, add the depency to your project:</p>
+<pre><code class="language-groovy">testImplementation(&quot;io.kotest:kotest-extensions-koin:${version}&quot;)
+</code></pre>
+<p>With the dependency added, we can use Koin in our tests!</p>
+<pre><code class="language-kotlin">class KotestAndKoin : FunSpec(), KoinTest {
+
+    override fun listeners() = listOf(KoinListener(myKoinModule))
+
+    val userService by inject&lt;UserService&gt;()
+
+    init {
+      test(&quot;Use user service&quot;) {
+        userService.getUser().username shouldBe &quot;Kerooker&quot;
+      }
+    }
+
+}
+</code></pre>
+<h2 id="robolectric">Robolectric</h2>
+<p><a href="http://robolectric.org/">Robolectric</a> can be used with Kotest through the <code>RobolectricExtension</code> which can be found in <code>kotest-extensions-robolectric</code> module.</p>
+<p>To add this module to project you need specify following in your <code>build.gradle</code>:</p>
+<pre><code class="language-groovy">testImplementation 'io.kotest:kotest-extensions-robolectric:&lt;version&gt;'
+</code></pre>
+<p>With this dependency added you should add extensions to your project config. For example if you have no such config yet it would look like</p>
+<pre><code class="language-kotlin">class MyProjectLevelConfig : AbstractProjectConfig() {
+    override fun extensions(): List&lt;Extension&gt; = super.extensions() + RobolectricExtension()
+}
+</code></pre>
+<p>Of course you can just add this extension to another extensions you're already using.</p>
+<p>After that done any class which should be ran with Robolectric should be annotated with <code>@RobolectricTest</code> annotation.</p>
+<h2 id="compilation-test">Compilation test</h2>
+<p>The <code>kotest-assertions-compiler</code> extension provides matchers to assert that given kotlin code snippet compiles or not.
+This extension is a wrapper over <a href="https://github.com/tschuchortdev/kotlin-compile-testing">kotlin-compile-testing</a> and provides following matchers</p>
+<ul>
+<li>String.shouldCompile()</li>
+<li>String.shouldNotCompile()</li>
+<li>File.shouldCompile()</li>
+<li>File.shouldNotCompile()</li>
+</ul>
+<p>To add the compilation matcher, add the following dependency to your project</p>
+<pre><code class="language-groovy">testImplementation(&quot;io.kotest:kotest-assertions-compiler:${version}&quot;)
+</code></pre>
+<p>Usage:</p>
+<pre><code class="language-kotlin">    class CompilationTest: StringSpec() {
+        init {
+            &quot;shouldCompile test&quot; {
+                val codeSnippet = &quot;&quot;&quot; val aString: String = &quot;A valid assignment&quot; &quot;&quot;&quot;.trimMargin()
+
+                codeSnippet.shouldCompile()
+                File(&quot;SourceFile.kt&quot;).shouldCompile()
+            }
+
+            &quot;shouldNotCompile test&quot; {
+                val codeSnippet = &quot;&quot;&quot; val aInteger: Int = &quot;A invalid assignment&quot; &quot;&quot;&quot;.trimMargin()
+
+                codeSnippet.shouldNotCompile()
+                File(&quot;SourceFile.kt&quot;).shouldNotCompile()
+            }
+        }
+    }
+</code></pre>
+<p>During checking of code snippet compilation the classpath of calling process is inherited, which means any dependencies which are available in calling process will also be available while compiling the code snippet.</p>
+<h2 id="system-extensions">System Extensions</h2>
+<p>Sometimes your code might use some functionalities straight from the JVM, which are very hard to simulate. With Kotest System Extensions, these difficulties are made easy to mock and simulate, and your code can be tested correctly. After changing the system and using the extensions, the previous state will be restored.</p>
+<p><strong>Attention</strong>: This code is sensitive to concurrency. Due to the JVM specification there can only be one instance of these extensions running (For example: Only one Environment map must exist). If you try to run more than one instance at a time, the result is unknown.</p>
+<h3 id="system-environment">System Environment</h3>
+<p>With <em>System Environment Extension</em> you can simulate how the System Environment is behaving. That is, what you're obtaining from <code>System.getenv()</code>.</p>
+<p>Kotest provides some extension functions that provides a System Environment in a specific scope:</p>
+<pre><code class="language-kotlin">withEnvironment(&quot;FooKey&quot;, &quot;BarValue&quot;) {
+    System.getenv(&quot;FooKey&quot;) shouldBe &quot;BarValue&quot; // System environment overriden!
+}
+</code></pre>
+<p>You can also use multiple values in this extension, through a map or list of pairs.</p>
+<pre><code class="language-kotlin">withEnvironment(mapOf(&quot;FooKey&quot; to &quot;BarValue&quot;, &quot;BarKey&quot; to &quot;FooValue&quot;)) {
+  // Use FooKey and BarKey
+}
+
+</code></pre>
+<p>These functions will add the keys and values if they're not currently present in the environment, and will override them if they are. Any keys untouched by the function will remain in the environment, and won't be messed with.</p>
+<p>Instead of extensions functions, you can also use the provided Listeners to apply these functionalities in a bigger scope. There's an alternative for the Spec/Per test level, and an alternative for the Project Level.</p>
+<pre><code class="language-kotlin">
+class MyTest : FreeSpec() {
+
+      override fun listeners() = listOf(SystemEnvironmentTestListener(&quot;foo&quot;, &quot;bar&quot;))
+
+    init {
+      &quot;MyTest&quot; {
+        System.getenv(&quot;foo&quot;) shouldBe &quot;bar&quot;
+      }
+    }
+
+}
+
+</code></pre>
+<pre><code class="language-kotlin">
+class ProjectConfig : AbstractProjectConfig() {
+
+    override fun listeners(): List&lt;TestListener&gt; = listOf(SystemEnvironmentProjectListener(&quot;foo&quot;, &quot;bar&quot;))
+
+}
+
+</code></pre>
+<h3 id="system-property-extension">System Property Extension</h3>
+<p>In the same fashion as the Environment Extensions, you can override the System Properties (<code>System.getProperties()</code>):</p>
+<pre><code class="language-kotlin">withSystemProperty(&quot;foo&quot;, &quot;bar&quot;) {
+  System.getProperty(&quot;foo&quot;) shouldBe &quot;bar&quot;
+}
+</code></pre>
+<p>And with similar Listeners:</p>
+<pre><code class="language-kotlin">    class MyTest : FreeSpec() {
+
+          override fun listeners() = listOf(SystemPropertyListener(&quot;foo&quot;, &quot;bar&quot;))
+
+        init {
+          &quot;MyTest&quot; {
+            System.getProperty(&quot;foo&quot;) shouldBe &quot;bar&quot;
+          }
+        }
+
+    }
+</code></pre>
+<h3 id="system-security-manager">System Security Manager</h3>
+<p>Similarly, with System Security Manager you can override the System Security Manager (<code>System.getSecurityManager()</code>)</p>
+<pre><code class="language-kotlin">
+    withSecurityManager(myManager) {
+      // Usage of security manager
+    }
+
+</code></pre>
+<p>And the Listeners:</p>
+<pre><code class="language-kotlin">    class MyTest : FreeSpec() {
+
+              override fun listeners() = listOf(SecurityManagerListener(myManager))
+
+            init {
+              // Use my security manager
+            }
+
+        }
+</code></pre>
+<h3 id="system-exit-extensions">System Exit Extensions</h3>
+<p>Sometimes you want to test that your code calls <code>System.exit</code>. For that you can use the <code>System Exit Listeners</code>. The Listener will throw an exception when the <code>System.exit</code> is called, allowing you to catch it and verify:</p>
+<pre><code class="language-kotlin">
+class MyTest : FreeSpec() {
+
+  override fun listeners() = listOf(SpecSystemExitListener)
+
+  init {
+    &quot;Catch exception&quot; {
+      val thrown: SystemExitException = shouldThrow&lt;SystemExitException&gt; {
+        System.exit(22)
+      }
+
+      thrown.exitCode shouldBe 22
+    }
+  }
+}
+
+</code></pre>
+<h3 id="no-stdout-no-stderr-listeners">No-stdout / no-stderr listeners</h3>
+<p>Maybe you want to guarantee that you didn't leave any debug messages around, or that you're always using a Logger in your logging.</p>
+<p>For that, Kotest provides you with <code>NoSystemOutListener</code> and <code>NoSystemErrListener</code>. These listeners won't allow any messages to be printed straight to <code>System.out</code> or <code>System.err</code>, respectively:</p>
+<pre><code class="language-kotlin">    // In Project or in Spec
+    override fun listeners() = listOf(NoSystemOutListener, NoSystemErrListener)
+</code></pre>
+<h3 id="localetimezone-listeners">Locale/Timezone listeners</h3>
+<p>Some codes use and/or are sensitive to the default Locale and default Timezone. Instead of manipulating the system defaults no your own,
+let Kotest do it for you!</p>
+<pre><code class="language-kotlin">withDefaultLocale(Locale.FRANCE) {
+  println(&quot;My locale is now France! Très bien!&quot;)
+}
+
+withDefaultTimezone(TimeZone.getTimeZone(ZoneId.of(&quot;America/Sao_Paulo&quot;))) {
+  println(&quot;My timezone is now America/Sao_Paulo! Muito bem!&quot;)
+}
+
+</code></pre>
+<p>And with the listeners</p>
+<pre><code class="language-kotlin">  // In Project or in Spec
+  override fun listeners() = listOf(
+    LocaleTestListener(Locale.FRANCE),
+    TimeZoneTestListener(TimeZone.getTimeZone(ZoneId.of(&quot;America/Sao_Paulo&quot;)))
+  )
+
+</code></pre>
+<h3 id="current-instant-listeners">Current instant listeners</h3>
+<p>Sometimes you may want to use the <code>now</code> static functions located in <code>java.time</code> classes for multiple reasons, such as setting the creation date of an entity</p>
+<p><code>data class MyEntity(creationDate: LocalDateTime = LocalDateTime.now())</code>.</p>
+<p>But what to do when you want to test that value? <code>now</code> will be different
+each time you call it!</p>
+<p>For that, Kotest provides <code>ConstantNowListener</code> and <code>withConstantNow</code> functions.</p>
+<p>While executing your code, your <code>now</code> will always be the value that you want to test against.</p>
+<pre><code class="language-kotlin">val foreverNow = LocalDateTime.now()
+
+withConstantNow(foreverNow) {
+  LocalDateTime.now() shouldBe foreverNow
+  delay(10) // Code is taking a small amount of time to execute, but `now` changed!
+  LocalDateTime.now() shouldBe foreverNow
+}
+
+</code></pre>
+<p>Or, with a listener for all the tests:</p>
+<pre><code class="language-kotlin">  override fun listeners() = listOf(
+    ConstantNowTestListener(foreverNow)
+  )
+</code></pre>
+<p><strong>ATTENTION</strong>: <code>withContantNow</code> and <code>ConstantNowTestListener</code> are very sensitive to race conditions. Using them, mocks the static method <code>now</code> which is global to the whole JVM instance,
+if you're using it while running test in parallel, the results may be inconsistent.</p>
+<h2 id="junit-format-xml-report">JUnit Format XML Report</h2>
+<p>JUnit includes an XML report generator that it calls the <a href="https://junit.org/junit5/docs/5.5.0-RC2/api/org/junit/platform/reporting/legacy/xml/LegacyXmlReportGeneratingListener.html">legacy xml report</a>. Many tools integrate with this format so it is very useful.
+However, this report has no concept of nesting tests. Therefore when used with a nested <a href="../styles/">test style</a> in Kotest, it will include parent tests as orphans.</p>
+<p>To solve this, Kotest has it's own <a href="junit_xml/">implementation of the same format</a>, that is configurable on whether to include parent tests and/or collapse the names.</p>
+<h2 id="mockserver">MockServer</h2>
+<p>Kotest provides an extension for integration with the <a href="https://www.mock-server.com">MockServer</a> library through the <code>kotest-extensions-mockserver</code> module.</p>
+<p>MockServer is described as an in process server that returns specific responses for different requests via HTTP or HTTPS.
+When MockServer receives a request it matches that request against the configured expectations. If a match is found it returns that response, otherwise a 404 is returned.</p>
+<p>Read <a href="mockserver/">full instructions here</a>.</p>
+<h2 id="testcontainers">TestContainers</h2>
+<p><a href="https://github.com/testcontainers/testcontainers-java">testcontainers-java</a> library that provide lightweight, throwaway instances of common databases, Selenium web browsers, or anything else that can run in a Docker container.</p>
+<p><code>kotest-extensions-testcontainers</code> provides integration for using testcontainers-java with kotest.</p>
+<p>For using <code>kotest-extensions-testcontainers</code> add the below dependency in your build file.</p>
+<pre><code class="language-groovy">testImplementation(&quot;io.kotest:kotest-extensions-testcontainers:${version}&quot;)
+</code></pre>
+<p>Having this dependency in test classpath brings in extension method's in scope which let you convert any Startable such as a DockerContainer into a kotest TestListener, which you can register with Kotest and then Kotest will manage lifecycle of container for you.</p>
+<p>For example:</p>
+<pre><code class="language-kotlin">
+class DatabaseRepositoryTest : FunSpec({
+   val redisContainer = GenericContainer&lt;Nothing&gt;(&quot;redis:5.0.3-alpine&quot;)
+   listener(redisContainer.perTest()) //converts container to listener and registering it with Kotest.
+
+   test(&quot;some test which assume to have redis container running&quot;) {
+      //
+   }
+})
+</code></pre>
+<p>In above example <code>perTest()</code> extension method converts the container into a <code>TestListener</code> which start's the
+redis container before each test and stop's that after test. Similarly if you want to reuse the container for all tests
+in a single spec class you can use <code>perSpec()</code> extension method which convert's container into a <code>TestListener</code>
+which start's the container before running any test in spec and stop's that after all tests, thus a single container is
+used by all tests in spec class.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../intellij/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Intellij plugin
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../listeners/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Listeners
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017 Kotest Team
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://kotlinlang.slack.com/?redir=%2Farchives%2FCT0G9SD7Z" target="_blank" rel="noopener" title="kotlinlang.slack.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/kotest/kotest" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['search.highlight', 'tabs'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

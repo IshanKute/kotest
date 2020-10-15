@@ -1,0 +1,1470 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Kotest test framework for Kotlin.">
+      
+      
+        <link rel="canonical" href="https://kotest.io/styles/">
+      
+      
+        <meta name="author" content="Kotest organization">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Styles - Kotest Test Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Heebo",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-177425497-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="deep-orange">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#testing-styles" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://kotest.io" title="Kotest Test Framework" class="md-header-nav__button md-logo" aria-label="Kotest Test Framework">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Kotest Test Framework
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Styles
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/kotest/kotest/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Kotest
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://kotest.io" title="Kotest Test Framework" class="md-nav__button md-logo" aria-label="Kotest Test Framework">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Kotest Test Framework
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/kotest/kotest/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Kotest
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Overview
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Overview" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Overview
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../quick_start/" class="md-nav__link">
+      Quick start
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../changelog/" class="md-nav__link">
+      Changelog
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Framework
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Framework" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Framework
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Styles
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Styles
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fun-spec" class="md-nav__link">
+    Fun Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-spec" class="md-nav__link">
+    String Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#should-spec" class="md-nav__link">
+    Should Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#describe-spec" class="md-nav__link">
+    Describe Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behavior-spec" class="md-nav__link">
+    Behavior Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word-spec" class="md-nav__link">
+    Word Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#free-spec" class="md-nav__link">
+    Free Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-spec" class="md-nav__link">
+    Feature Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expect-spec" class="md-nav__link">
+    Expect Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotation-spec" class="md-nav__link">
+    Annotation Spec
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intellij/" class="md-nav__link">
+      Intellij plugin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/" class="md-nav__link">
+      Extensions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../listeners/" class="md-nav__link">
+      Listeners
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data_driven_testing/" class="md-nav__link">
+      Data driven testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../test_ordering/" class="md-nav__link">
+      Test ordering
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../spec_ordering/" class="md-nav__link">
+      Spec ordering
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../conditional_evaluation/" class="md-nav__link">
+      Conditional evaluation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../isolation_mode/" class="md-nav__link">
+      Isolation mode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../timeout/" class="md-nav__link">
+      Timeouts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tags/" class="md-nav__link">
+      Tags
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../test_case_config/" class="md-nav__link">
+      Test Case Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nondeterministic_testing/" class="md-nav__link">
+      Nondeterministic testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../test_factories/" class="md-nav__link">
+      Test factories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project_config/" class="md-nav__link">
+      Project config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tempfile/" class="md-nav__link">
+      Temporary Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../autoclose/" class="md-nav__link">
+      Autoclose
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mocks/" class="md-nav__link">
+      Mocks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mpp/" class="md-nav__link">
+      Mpp
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../plugins/" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Assertions
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Assertions" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Assertions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assertions/" class="md-nav__link">
+      Assertions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/" class="md-nav__link">
+      Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/core/" class="md-nav__link">
+      Core Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/arrow/" class="md-nav__link">
+      Arrow Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/ktor/" class="md-nav__link">
+      Ktor Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/json/" class="md-nav__link">
+      Json Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../inspectors/" class="md-nav__link">
+      Inspectors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clues/" class="md-nav__link">
+      Clues
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Property Testing
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Property Testing" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Property Testing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../property_testing/" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../property_ops/" class="md-nav__link">
+      Generator Operations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../property_generators/" class="md-nav__link">
+      List of Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom_gens/" class="md-nav__link">
+      Custom Generators
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/kotest/kotest/issues" class="md-nav__link">
+      Issues
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      More
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="More" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        More
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../blogs/" class="md-nav__link">
+      Blogs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../third_party_integrations/" class="md-nav__link">
+      Third party integrations
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fun-spec" class="md-nav__link">
+    Fun Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-spec" class="md-nav__link">
+    String Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#should-spec" class="md-nav__link">
+    Should Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#describe-spec" class="md-nav__link">
+    Describe Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behavior-spec" class="md-nav__link">
+    Behavior Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word-spec" class="md-nav__link">
+    Word Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#free-spec" class="md-nav__link">
+    Free Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-spec" class="md-nav__link">
+    Feature Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expect-spec" class="md-nav__link">
+    Expect Spec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotation-spec" class="md-nav__link">
+    Annotation Spec
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/kotest/kotest/edit/master/docs/styles.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="testing-styles">Testing Styles</h1>
+<p>Kotest offers 10 different styles of test layout. Some are inspired from other popular test frameworks to make you feel right at home.
+Others were created just for Kotest.</p>
+<table>
+<thead>
+<tr>
+<th>Test Style</th>
+<th>Inspired By</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#fun-spec">Fun Spec</a></td>
+<td>ScalaTest</td>
+</tr>
+<tr>
+<td><a href="#describe-spec">Describe Spec</a></td>
+<td>Javascript frameworks and RSpec</td>
+</tr>
+<tr>
+<td><a href="#should-spec">Should Spec</a></td>
+<td>A Kotest original</td>
+</tr>
+<tr>
+<td><a href="#string-spec">String Spec</a></td>
+<td>A Kotest original</td>
+</tr>
+<tr>
+<td><a href="#behavior-spec">Behavior Spec</a></td>
+<td>BDD frameworks</td>
+</tr>
+<tr>
+<td><a href="#free-spec">Free Spec</a></td>
+<td>ScalaTest</td>
+</tr>
+<tr>
+<td><a href="#word-spec">Word Spec</a></td>
+<td>ScalaTest</td>
+</tr>
+<tr>
+<td><a href="#feature-spec">Feature Spec</a></td>
+<td>Cucumber</td>
+</tr>
+<tr>
+<td><a href="#expect-spec">Expect Spec</a></td>
+<td>A Kotest original</td>
+</tr>
+<tr>
+<td><a href="#annotation-spec">Annotation Spec</a></td>
+<td>JUnit</td>
+</tr>
+</tbody>
+</table>
+<p>There are no functional differences between the styles.
+All allow the same types of configuration &mdash; threads, tags, etc &mdash;
+ it is simply a matter of preference how you structure your tests.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Some teams prefer to mandate usage of a single style, others mix and match. There is no right or wrong - do whatever feels right for your team.</p>
+</div>
+<h2 id="fun-spec">Fun Spec</h2>
+<p><code>FunSpec</code> allows you to create tests by invoking a function called <code>test</code> with a string parameter to describe the test,
+and then the test itself as a lambda. If in doubt, this is the style to use.</p>
+<pre><code class="language-kotlin">class MyTests : FunSpec({
+    test(&quot;String length should return the length of the string&quot;) {
+        &quot;sammy&quot;.length shouldBe 5
+        &quot;&quot;.length shouldBe 0
+    }
+})
+</code></pre>
+<p>Tests can be disabled using the <code>xcontext</code> and <code>xtest</code> variants (in addition to the <a href="../conditional_evaluation/">usual ways</a>)</p>
+<pre><code class="language-kotlin">class MyTests : DescribeSpec({
+    context(&quot;this outer block is enabled&quot;) {
+        xtest(&quot;this test is disabled&quot;) {
+            // test here
+        }
+    }
+    xcontext(&quot;this block is disabled&quot;) {
+      test(&quot;disabled by inheritance from the parent&quot;) {
+        // test here
+      }
+    }
+})
+</code></pre>
+<h2 id="string-spec">String Spec</h2>
+<p><code>StringSpec</code> reduces the syntax to the absolute minimum.
+ Just write a string followed by a lambda expression with your test code.</p>
+<pre><code class="language-kotlin">class MyTests : StringSpec({
+    &quot;strings.length should return size of string&quot; {
+        &quot;hello&quot;.length shouldBe 5
+    }
+})
+</code></pre>
+<p>Adding config to the test.</p>
+<pre><code class="language-kotlin">class MyTests : StringSpec({
+    &quot;strings.length should return size of string&quot;.config(enabled = false, invocations = 3) {
+        &quot;hello&quot;.length shouldBe 5
+    }
+})
+</code></pre>
+<h2 id="should-spec">Should Spec</h2>
+<p><code>ShouldSpec</code> is similar to fun spec, but uses the keyword <code>should</code> instead of <code>test</code>.</p>
+<pre><code class="language-kotlin">class MyTests : ShouldSpec({
+    should(&quot;return the length of the string&quot;) {
+        &quot;sammy&quot;.length shouldBe 5
+        &quot;&quot;.length shouldBe 0
+    }
+})
+</code></pre>
+<p>Tests can be nested in one or more context blocks as well:</p>
+<pre><code class="language-kotlin">class MyTests : ShouldSpec({
+    context(&quot;String.length&quot;) {
+        should(&quot;return the length of the string&quot;) {
+            &quot;sammy&quot;.length shouldBe 5
+            &quot;&quot;.length shouldBe 0
+        }
+    }
+})
+</code></pre>
+<p>Tests can be disabled using the <code>xcontext</code> and <code>xshould</code> variants (in addition to the <a href="../conditional_evaluation/">usual ways</a>)</p>
+<pre><code class="language-kotlin">class MyTests : ShouldSpec({
+    context(&quot;this outer block is enabled&quot;) {
+        xshould(&quot;this test is disabled&quot;) {
+            // test here
+        }
+    }
+    xcontext(&quot;this block is disabled&quot;) {
+      should(&quot;disabled by inheritance from the parent&quot;) {
+        // test here
+      }
+    }
+})
+</code></pre>
+<h2 id="describe-spec">Describe Spec</h2>
+<p><code>DescribeSpec</code> offers a style familiar to those from a Ruby or Javascript background, as this testing style
+ uses <code>describe</code> / <code>it</code> keywords. Tests must be nested in one or more <code>describe</code> blocks.</p>
+<pre><code class="language-kotlin">class MyTests : DescribeSpec({
+    describe(&quot;score&quot;) {
+        it(&quot;start as zero&quot;) {
+            // test here
+        }
+        describe(&quot;with a strike&quot;) {
+            it(&quot;adds ten&quot;) {
+                // test here
+            }
+            it(&quot;carries strike to the next frame&quot;) {
+                // test here
+            }
+        }
+
+        describe(&quot;for the opposite team&quot;) {
+          it(&quot;Should negate one score&quot;) {
+            // test here
+          }
+        }
+    }
+})
+</code></pre>
+<p>Tests can be disabled using the <code>xdescribe</code> and <code>xit</code> variants (in addition to the <a href="../conditional_evaluation/">usual ways</a>)</p>
+<pre><code class="language-kotlin">class MyTests : DescribeSpec({
+    describe(&quot;this outer block is enabled&quot;) {
+        xit(&quot;this test is disabled&quot;) {
+            // test here
+        }
+    }
+    xdescribe(&quot;this block is disabled&quot;) {
+      it(&quot;disabled by inheritance from the parent&quot;) {
+        // test here
+      }
+    }
+})
+</code></pre>
+<h2 id="behavior-spec">Behavior Spec</h2>
+<p>Popular with people who like to write tests in the <em>BDD</em> style, <code>BehaviorSpec</code> allows you to use <code>given</code>, <code>when</code>, <code>then</code>.</p>
+<pre><code class="language-kotlin">class MyTests : BehaviorSpec({
+    given(&quot;a broomstick&quot;) {
+        `when`(&quot;I sit on it&quot;) {
+            then(&quot;I should be able to fly&quot;) {
+                // test code
+            }
+        }
+        `when`(&quot;I throw it away&quot;) {
+            then(&quot;it should come back&quot;) {
+                // test code
+            }
+        }
+    }
+})
+</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Because <code>when</code> is a keyword in Kotlin, we must enclose it with backticks. Alternatively, there are title case versions available if you don't like the use of backticks, eg, <code>Given</code>, <code>When</code>, <code>Then</code>.</p>
+</div>
+<p>You can also use the <code>And</code> keyword in <code>Given</code> and <code>When</code> to add an extra depth to it:</p>
+<pre><code class="language-kotlin">class MyTests : BehaviorSpec({
+    given(&quot;a broomstick&quot;) {
+        and(&quot;a witch&quot;) {
+            `when`(&quot;The witch sits on it&quot;) {
+                and(&quot;she laughs hysterically&quot;) {
+                    then(&quot;She should be able to fly&quot;) {
+                        // test code
+                    }
+                }
+            }
+        }
+    }
+})
+</code></pre>
+<p>Note: <code>Then</code> scope doesn't have an <code>and</code> scope due to a Gradle bug. For more information, see #594</p>
+<p>Tests can be disabled using the <code>xgiven</code>, <code>xwhen</code>, and <code>xthen</code> variants (in addition to the <a href="../conditional_evaluation/">usual ways</a>)</p>
+<pre><code class="language-kotlin">class MyTests : DescribeSpec({
+    xgiven(&quot;this is disabled&quot;) {
+        When(&quot;disabled by inheritance from the parent&quot;) {
+            then(&quot;disabled by inheritance from its grandparent&quot;) {
+                // disabled test
+            }
+        }
+    }
+    given(&quot;this is active&quot;) {
+        When(&quot;this is active too&quot;) {
+            xthen(&quot;this is disabled&quot;) {
+               // disabled test
+            }
+        }
+    }
+})
+</code></pre>
+<h2 id="word-spec">Word Spec</h2>
+<p><code>WordSpec</code> uses the keyword <code>should</code> and uses that to nest tests after a context string.</p>
+<pre><code class="language-kotlin">class MyTests : WordSpec({
+    &quot;String.length&quot; should {
+        &quot;return the length of the string&quot; {
+            &quot;sammy&quot;.length shouldBe 5
+            &quot;&quot;.length shouldBe 0
+        }
+    }
+})
+</code></pre>
+<p>It also supports the keyword <code>When</code> allowing to add another level of nesting. Note, since <code>when</code> is a keyword
+in Kotlin, we must use backticks or the uppercase variant.</p>
+<pre><code class="language-kotlin">class MyTests : WordSpec({
+    &quot;Hello&quot; When {
+        &quot;asked for length&quot; should {
+            &quot;return 5&quot; {
+                &quot;Hello&quot;.length shouldBe 5
+            }
+        }
+        &quot;appended to Bob&quot; should {
+            &quot;return Hello Bob&quot; {
+                &quot;Hello &quot; + &quot;Bob&quot; shouldBe &quot;Hello Bob&quot;
+            }
+        }
+    }
+})
+</code></pre>
+<h2 id="free-spec">Free Spec</h2>
+<p><code>FreeSpec</code> allows you to nest arbitrary levels of depth using the keyword <code>-</code> (minus) for outer tests, and just the test name for the final test:</p>
+<pre><code class="language-kotlin">class MyTests : FreeSpec({
+    &quot;String.length&quot; - {
+        &quot;should return the length of the string&quot; {
+            &quot;sammy&quot;.length shouldBe 5
+            &quot;&quot;.length shouldBe 0
+        }
+    }
+    &quot;containers can be nested as deep as you want&quot; - {
+        &quot;and so we nest another container&quot; - {
+            &quot;yet another container&quot; - {
+                &quot;finally a real test&quot; {
+                    1 + 1 shouldBe 2
+                }
+            }
+        }
+    }
+})
+</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The innermost test must not use the <code>-</code> (minus) keyword after the test name.</p>
+</div>
+<h2 id="feature-spec">Feature Spec</h2>
+<p><code>FeatureSpec</code> allows you to use <code>feature</code> and <code>scenario</code>, which will be familiar to those who have used <a href="http://docs.cucumber.io/gherkin/reference/">cucumber</a>.
+Although not intended to be exactly the same as cucumber, the keywords mimic the style.</p>
+<pre><code class="language-kotlin">class MyTests : FeatureSpec({
+    feature(&quot;the can of coke&quot;) {
+        scenario(&quot;should be fizzy when I shake it&quot;) {
+            // test here
+        }
+        scenario(&quot;and should be tasty&quot;) {
+            // test here
+        }
+    }
+})
+</code></pre>
+<p>Tests can be disabled using the <code>xfeature</code> and <code>xscenario</code> variants (in addition to the <a href="../conditional_evaluation/">usual ways</a>)</p>
+<pre><code class="language-kotlin">class MyTests : FeatureSpec({
+    feature(&quot;this outer block is enabled&quot;) {
+        xscenario(&quot;this test is disabled&quot;) {
+            // test here
+        }
+    }
+    xfeature(&quot;this block is disabled&quot;) {
+      scenario(&quot;disabled by inheritance from the parent&quot;) {
+        // test here
+      }
+    }
+})
+</code></pre>
+<h2 id="expect-spec">Expect Spec</h2>
+<p><code>ExpectSpec</code> is similar to <code>FunSpec</code> and <code>ShouldSpec</code> but uses the <code>expect</code> keyword.</p>
+<pre><code class="language-kotlin">class MyTests : ExpectSpec({
+    expect(&quot;my test&quot;) {
+        // test here
+    }
+})
+</code></pre>
+<p>Tests can be nested in one or more context blocks as well:</p>
+<pre><code class="language-kotlin">class MyTests : ExpectSpec({
+    context(&quot;a calculator&quot;) {
+        expect(&quot;simple addition&quot;) {
+            // test here
+        }
+        expect(&quot;integer overflow&quot;) {
+            // test here
+        }
+    }
+})
+</code></pre>
+<p>Tests can be disabled using the <code>xcontext</code> and <code>xexpect</code> variants (in addition to the <a href="../conditional_evaluation/">usual ways</a>)</p>
+<pre><code class="language-kotlin">class MyTests : DescribeSpec({
+    context(&quot;this outer block is enabled&quot;) {
+        xexpect(&quot;this test is disabled&quot;) {
+            // test here
+        }
+    }
+    xcontext(&quot;this block is disabled&quot;) {
+      expect(&quot;disabled by inheritance from the parent&quot;) {
+        // test here
+      }
+    }
+})
+</code></pre>
+<h2 id="annotation-spec">Annotation Spec</h2>
+<p>If you are migrating from JUnit then <code>AnnotationSpec</code> is a spec that uses annotations like JUnit 4/5.
+Just add the <code>@Test</code> annotation to any function defined in the spec class.</p>
+<p>You can also add annotations to execute something before tests/specs and after tests/specs, similarly to JUnit's</p>
+<pre><code>@BeforeAll / @BeforeClass
+@BeforeEach / @Before
+@AfterAll / @AfterClass
+@AfterEach / @After
+</code></pre>
+<p>If you want to ignore a test, use <code>@Ignore</code>.</p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Although this spec doesn't offer much advantage over using JUnit, it allows you to migrate existing tests relatively easily, as you typically just need to adjust imports.</p>
+</div>
+<pre><code class="language-kotlin">class AnnotationSpecExample : AnnotationSpec() {
+
+    @BeforeEach
+    fun beforeTest() {
+        println(&quot;Before each test&quot;)
+    }
+
+    @Test
+    fun test1() {
+        1 shouldBe 1
+    }
+
+    @Test
+    fun test2() {
+        3 shouldBe 3
+    }
+}
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../changelog/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Changelog
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../intellij/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Intellij plugin
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017 Kotest Team
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://kotlinlang.slack.com/?redir=%2Farchives%2FCT0G9SD7Z" target="_blank" rel="noopener" title="kotlinlang.slack.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/kotest/kotest" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['search.highlight', 'tabs'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3112 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Kotest test framework for Kotlin.">
+      
+      
+        <link rel="canonical" href="https://kotest.io/changelog/">
+      
+      
+        <meta name="author" content="Kotest organization">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Changelog - Kotest Test Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Heebo",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-177425497-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="deep-orange">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#changelog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://kotest.io" title="Kotest Test Framework" class="md-header-nav__button md-logo" aria-label="Kotest Test Framework">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Kotest Test Framework
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/kotest/kotest/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Kotest
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://kotest.io" title="Kotest Test Framework" class="md-nav__button md-logo" aria-label="Kotest Test Framework">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Kotest Test Framework
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/kotest/kotest/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Kotest
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Overview
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Overview" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Overview
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../quick_start/" class="md-nav__link">
+      Quick start
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Changelog
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Changelog
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#430-october-2020-blog" class="md-nav__link">
+    4.3.0 October 2020 - Blog
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3.0 October 2020 - Blog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    Breaking Changes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#426-october-2020" class="md-nav__link">
+    4.2.6 October 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#425-september-2020" class="md-nav__link">
+    4.2.5 September 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#424-september-2020" class="md-nav__link">
+    4.2.4 September 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#423-september-2020" class="md-nav__link">
+    4.2.3 September 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#422-august-2020" class="md-nav__link">
+    4.2.2 August 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#421-august-2020" class="md-nav__link">
+    4.2.1 August 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#420-august-2020-blog" class="md-nav__link">
+    4.2.0 August 2020 - Blog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#412-july-2020" class="md-nav__link">
+    4.1.2 July 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#411-june-2020" class="md-nav__link">
+    4.1.1 June 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#410-june-2020-blog" class="md-nav__link">
+    4.1.0 June 2020 - Blog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#406-june-2020" class="md-nav__link">
+    4.0.6 June 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#405-april-2020" class="md-nav__link">
+    4.0.5 April 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#404-april-2020" class="md-nav__link">
+    4.0.4 April 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#403-april-2020" class="md-nav__link">
+    4.0.3 April 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#402-april-2020" class="md-nav__link">
+    4.0.2 April 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#401-march-2020" class="md-nav__link">
+    4.0.1 March 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#400-march-2020" class="md-nav__link">
+    4.0.0 March 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#342" class="md-nav__link">
+    3.4.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#341" class="md-nav__link">
+    3.4.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#340" class="md-nav__link">
+    3.4.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#330" class="md-nav__link">
+    3.3.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    3.2.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#320" class="md-nav__link">
+    3.2.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3111" class="md-nav__link">
+    3.1.11
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3110" class="md-nav__link">
+    3.1.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#319" class="md-nav__link">
+    3.1.9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#318" class="md-nav__link">
+    3.1.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#317" class="md-nav__link">
+    3.1.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#316" class="md-nav__link">
+    3.1.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#315" class="md-nav__link">
+    3.1.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#314" class="md-nav__link">
+    3.1.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#313" class="md-nav__link">
+    3.1.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#312" class="md-nav__link">
+    3.1.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    3.1.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-310" class="md-nav__link">
+    Version 3.1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-30x-march-29-2018" class="md-nav__link">
+    Version 3.0.x - March 29 2018
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-200-released-2017-03-26" class="md-nav__link">
+    Version 2.0.0, released 2017-03-26
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.0.0, released 2017-03-26">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-132-released-2016-07-05" class="md-nav__link">
+    Version 1.3.2, released 2016-07-05
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 1.3.2, released 2016-07-05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_1" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-131-released-2016-07-03" class="md-nav__link">
+    Version 1.3.1, released 2016-07-03
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 1.3.1, released 2016-07-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_2" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-130-released-2016-07-03" class="md-nav__link">
+    Version 1.3.0, released 2016-07-03
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 1.3.0, released 2016-07-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_1" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_3" class="md-nav__link">
+    Changed
+  </a>
+  
+    <nav class="md-nav" aria-label="Changed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#replaced-timeout-timeunit-with-duration-29" class="md-nav__link">
+    Replaced timeout + timeUnit with Duration (#29)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecated" class="md-nav__link">
+    Deprecated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed_1" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Framework
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Framework" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Framework
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../styles/" class="md-nav__link">
+      Styles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intellij/" class="md-nav__link">
+      Intellij plugin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/" class="md-nav__link">
+      Extensions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../listeners/" class="md-nav__link">
+      Listeners
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data_driven_testing/" class="md-nav__link">
+      Data driven testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../test_ordering/" class="md-nav__link">
+      Test ordering
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../spec_ordering/" class="md-nav__link">
+      Spec ordering
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../conditional_evaluation/" class="md-nav__link">
+      Conditional evaluation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../isolation_mode/" class="md-nav__link">
+      Isolation mode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../timeout/" class="md-nav__link">
+      Timeouts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tags/" class="md-nav__link">
+      Tags
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../test_case_config/" class="md-nav__link">
+      Test Case Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nondeterministic_testing/" class="md-nav__link">
+      Nondeterministic testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../test_factories/" class="md-nav__link">
+      Test factories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project_config/" class="md-nav__link">
+      Project config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tempfile/" class="md-nav__link">
+      Temporary Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../autoclose/" class="md-nav__link">
+      Autoclose
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mocks/" class="md-nav__link">
+      Mocks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mpp/" class="md-nav__link">
+      Mpp
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../plugins/" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Assertions
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Assertions" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Assertions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assertions/" class="md-nav__link">
+      Assertions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/" class="md-nav__link">
+      Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/core/" class="md-nav__link">
+      Core Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/arrow/" class="md-nav__link">
+      Arrow Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/ktor/" class="md-nav__link">
+      Ktor Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matchers/json/" class="md-nav__link">
+      Json Matchers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../inspectors/" class="md-nav__link">
+      Inspectors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clues/" class="md-nav__link">
+      Clues
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Property Testing
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Property Testing" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Property Testing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../property_testing/" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../property_ops/" class="md-nav__link">
+      Generator Operations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../property_generators/" class="md-nav__link">
+      List of Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom_gens/" class="md-nav__link">
+      Custom Generators
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/kotest/kotest/issues" class="md-nav__link">
+      Issues
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      More
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="More" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        More
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../blogs/" class="md-nav__link">
+      Blogs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../third_party_integrations/" class="md-nav__link">
+      Third party integrations
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#430-october-2020-blog" class="md-nav__link">
+    4.3.0 October 2020 - Blog
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3.0 October 2020 - Blog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    Breaking Changes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#426-october-2020" class="md-nav__link">
+    4.2.6 October 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#425-september-2020" class="md-nav__link">
+    4.2.5 September 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#424-september-2020" class="md-nav__link">
+    4.2.4 September 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#423-september-2020" class="md-nav__link">
+    4.2.3 September 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#422-august-2020" class="md-nav__link">
+    4.2.2 August 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#421-august-2020" class="md-nav__link">
+    4.2.1 August 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#420-august-2020-blog" class="md-nav__link">
+    4.2.0 August 2020 - Blog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#412-july-2020" class="md-nav__link">
+    4.1.2 July 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#411-june-2020" class="md-nav__link">
+    4.1.1 June 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#410-june-2020-blog" class="md-nav__link">
+    4.1.0 June 2020 - Blog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#406-june-2020" class="md-nav__link">
+    4.0.6 June 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#405-april-2020" class="md-nav__link">
+    4.0.5 April 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#404-april-2020" class="md-nav__link">
+    4.0.4 April 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#403-april-2020" class="md-nav__link">
+    4.0.3 April 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#402-april-2020" class="md-nav__link">
+    4.0.2 April 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#401-march-2020" class="md-nav__link">
+    4.0.1 March 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#400-march-2020" class="md-nav__link">
+    4.0.0 March 2020
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#342" class="md-nav__link">
+    3.4.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#341" class="md-nav__link">
+    3.4.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#340" class="md-nav__link">
+    3.4.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#330" class="md-nav__link">
+    3.3.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    3.2.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#320" class="md-nav__link">
+    3.2.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3111" class="md-nav__link">
+    3.1.11
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3110" class="md-nav__link">
+    3.1.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#319" class="md-nav__link">
+    3.1.9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#318" class="md-nav__link">
+    3.1.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#317" class="md-nav__link">
+    3.1.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#316" class="md-nav__link">
+    3.1.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#315" class="md-nav__link">
+    3.1.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#314" class="md-nav__link">
+    3.1.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#313" class="md-nav__link">
+    3.1.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#312" class="md-nav__link">
+    3.1.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    3.1.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-310" class="md-nav__link">
+    Version 3.1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-30x-march-29-2018" class="md-nav__link">
+    Version 3.0.x - March 29 2018
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-200-released-2017-03-26" class="md-nav__link">
+    Version 2.0.0, released 2017-03-26
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.0.0, released 2017-03-26">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-132-released-2016-07-05" class="md-nav__link">
+    Version 1.3.2, released 2016-07-05
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 1.3.2, released 2016-07-05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_1" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-131-released-2016-07-03" class="md-nav__link">
+    Version 1.3.1, released 2016-07-03
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 1.3.1, released 2016-07-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_2" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-130-released-2016-07-03" class="md-nav__link">
+    Version 1.3.0, released 2016-07-03
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 1.3.0, released 2016-07-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_1" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_3" class="md-nav__link">
+    Changed
+  </a>
+  
+    <nav class="md-nav" aria-label="Changed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#replaced-timeout-timeunit-with-duration-29" class="md-nav__link">
+    Replaced timeout + timeUnit with Duration (#29)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecated" class="md-nav__link">
+    Deprecated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed_1" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/kotest/kotest/edit/master/docs/changelog.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="changelog">Changelog</h1>
+<h4 id="430-october-2020-blog">4.3.0 October 2020 - <a href="https://dev.to/kotest/kotest-release-4-3-2768">Blog</a></h4>
+<h5 id="features">Features:</h5>
+<ul>
+<li>New data driven test DSL with data classes #1537 (framework)</li>
+<li>Option to strip whitespace from test names #1545 (framework)</li>
+<li>EnabledIf annotation for specs #1683 (framework)</li>
+<li>Propagate coroutine context to tests #1725 (framework)</li>
+<li>Option to suppress configuration dump #1742 (framework)</li>
+<li>Added severity attribute for TestCase #1746 (framework)</li>
+<li>Added kotest.framework.sourceref.disable option (framework)</li>
+<li>Make Engine dependency free #1748 (framework)</li>
+<li>Multi-line-string comparison for file contents #823 (assertions)</li>
+<li>New assertion: Iterator.shouldHaveNext() #1660 (assertions)</li>
+<li>New assertions: isEmpty / isDefined for java Optional #1661 (assertions)</li>
+<li>Non infix matchers should return <code>this</code> for easy chaining #1744 (assertions)</li>
+<li>Add property test module for kotlinx datetime #1679 (prop-testing)</li>
+<li>Add Gen.forNone #1636 (prop-testing)</li>
+<li>Arb should generate a single value #1754 (prop-testing)</li>
+<li>Adds an arbitrary to generate bigdecimal #1705 (prop-testing)</li>
+<li>Add steps and stack trace to allure, with full docs #460 (extensions)</li>
+<li>Added roboelectric extension to main build (extensions)</li>
+</ul>
+<h5 id="breaking-changes">Breaking Changes</h5>
+<ul>
+<li>The <code>kotest-extensions-junit5extensions</code> module is now called <code>kotest-extensions-junit5</code></li>
+</ul>
+<h4 id="426-october-2020">4.2.6 October 2020</h4>
+<ul>
+<li>Bugfix: Fixed regression in shouldBe when using iterables/arrays #1707 #1727</li>
+<li>Bugfix: Fix first failure in <code>beforeTest</code> blocks #1736</li>
+<li>Bugfix: deprecate distinct #1730</li>
+<li>Bugfix: Fixed the empty allure result for tests with the failed afterTest block #1724</li>
+<li>Feature: Added per project listener for testcontainers #1731</li>
+</ul>
+<h4 id="425-september-2020">4.2.5 September 2020</h4>
+<ul>
+<li>Bugfix: Fixed performance issue when using 1000s of tests in gradle #1693</li>
+<li>Feature: Added matchers for pair / triple components 1694</li>
+<li>Feature: Added shouldHaveNameWithoutExtension matcher for files and paths #1696</li>
+<li>Improvement: Added koin lifecycle mode #1710</li>
+</ul>
+<h4 id="424-september-2020">4.2.4 September 2020</h4>
+<ul>
+<li>Bugfix: Test time does not scale with number of tests #1685</li>
+<li>Bugfix: Added spring listener lifecycle mode #1643</li>
+<li>Bugfix: Fix and remove double negative in empty directory assertions</li>
+<li>Improvement: Duplicated test name exception should include test name #1686</li>
+<li>Improvement: SpringListener to generate meaningful method names #1591</li>
+</ul>
+<h4 id="423-september-2020">4.2.3 September 2020</h4>
+<ul>
+<li>Bugfix: Throwables of <code>Error</code> in the engine should be reported to test engine listeners</li>
+<li>Bugfix: Switched classgraph to api</li>
+<li>Bugfix: Make Set comparisons use .contains() instead of a linear search #1672</li>
+<li>Bugfix: Change retry default delay to 1 #1670</li>
+<li>Bugfix: removed 1.4 api usage from property tests</li>
+<li>Improvement: Allow retry to call suspend functions #1669</li>
+<li>Improvement: Add matcher alias for Iterator have next #1664</li>
+<li>Improvement: Add java.util.Optional matchers #1662</li>
+<li>Improvement: Expand ktor matchers to the client libraries #1658</li>
+<li>Improvement: Add <code>forNone</code> assertion #1654</li>
+<li>Improvement: Arb and Exhaustive should be covariant #1653</li>
+<li>Improvement: Remove the annoying <code>executionError</code> extra test in gradle #1655</li>
+<li>Improvement: Added more helpful error message when spec instantiation fails</li>
+<li>Docs: Update Gradle dependencies docs removing unnecessary -jvm suffix #1650</li>
+<li>Docs: MockServer extension documentation #1446</li>
+</ul>
+<h4 id="422-august-2020">4.2.2 August 2020</h4>
+<ul>
+<li>Bugfix: Usage of a Kotlin 1.4 only method has been removed</li>
+<li>Bugfix: KotlinReflectionInternalError fixed on java enums #1611</li>
+<li>Bugfix: Errors in a DiscoveryExtension were not propagated to output #1634</li>
+<li>Bugfix: Tags specified via inline tags dsl were not being picked up #1642</li>
+<li>Improvement: Updated output of some collection matchers to format an element per line #1380</li>
+</ul>
+<h4 id="421-august-2020">4.2.1 August 2020</h4>
+<ul>
+<li>Feature: The assertion libraries are now also published for watchos, tvos, and ios in addition to the macos, windows, and linux targets previously.</li>
+</ul>
+<h4 id="420-august-2020-blog">4.2.0 August 2020 - <a href="../blog/release_4.2/">Blog</a></h4>
+<ul>
+<li>Feature: Kotest upgraded to use Kotlin 1.4.0 #1511</li>
+<li>Feature: Allow multiple project configs to be detected and merged #1632</li>
+<li>Feature: Allow case control in test's reports #1458</li>
+<li>Feature: Use expression for tags instead of include/exclude #863</li>
+<li>Feature: Add new scoped callbacks #1584</li>
+<li>Feature: Support order annotation for SpecOrder #1593</li>
+<li>Feature: Spec level overrides for timeout and invocation timeout #1551</li>
+<li>Improvement: Added exhaustive only mode to property tests #1596</li>
+<li>Improvement: Change instance of matchers to use generic contracts #1510</li>
+<li>Improvement: Allow to disable SpringListener on final class warning #1573</li>
+<li>Improvement: Bundle console runner with intellij plugin #1567</li>
+<li>Improvement: Improved error message for map should contain when key present #1587</li>
+<li>Improvement: Allow allure to be customizable #1527</li>
+<li>Improvement: Use the SPDX compliant license identifier "Apache-2.0" in POM files <a href="https://github.com/kotest/kotest/issues/1517">#1517</a></li>
+<li>Improvement: Use forAll(1) suspend parameters #1626</li>
+<li>Bugfix: Running all tests in a package doesn't run tests in subpackages #1621</li>
+<li>Bugfix: Can't run a single test method from Gradle 6.5 #1531</li>
+<li>Bugfix: TestFactory listeners not executing on nested tests #1613</li>
+<li>Bugfix: Disabling test execution with x-methods doesn't work with kotest-core-js #1623</li>
+<li>Bugfix: NoSuchFileException when using kotest-extensions-junitxml with Gradle #1581</li>
+<li>Bugfix: Non complete junit report when using FunSpec #999</li>
+<li>Breaking Change: kotest-core module has been replaced with kotest-framework-api and kotest-framework-engine. Tools authors can depend on api only. Engine should be used for JS testing. For JVM testing, continue to use kotest-runner-junit5-jvm.</li>
+</ul>
+<h4 id="412-july-2020">4.1.2 July 2020</h4>
+<ul>
+<li>Bugfix: Dkotest.tags.include= only takes into account @Tags <a href="https://github.com/kotest/kotest/issues/1536">#1536</a> sksamuel</li>
+<li>Bugfix: Ensure exhaustive isn't build with an empty list <a href="https://github.com/kotest/kotest/issues/1549">#1549</a> Cleidiano Oliveira</li>
+<li>Bugfix: Add concurrent spec runner and fix sequential spec runner <a href="https://github.com/kotest/kotest/issues/1547">#1547</a> sksamuel</li>
+<li>Bugfix: Take into account <code>range</code> for <code>IntShrinker</code> and <code>LongShrinker</code> <a href="https://github.com/kotest/kotest/issues/1535">#1535</a> sksamuel</li>
+<li>Feature: Support expressions for tags as an alternative to include/exclude <a href="https://github.com/kotest/kotest/issues/863">#863</a> sksamuel</li>
+<li>Feature: Expand some matchers to Iterable <a href="https://github.com/kotest/kotest/issues/1538">#1538</a> Leonardo Colman Lopes</li>
+<li>Improvement: Add the ability to make parameter substitutions when executing http files <a href="https://github.com/kotest/kotest/issues/1560">#1560</a> Shane Lathrop</li>
+<li>Improvement: Added xGiven / xWhen / xThen options to Behavior spec <a href="https://github.com/kotest/kotest/issues/1534">#1534</a> sksamuel</li>
+<li>Improvement: Added nicer syntax for Test Containers sksamuel</li>
+<li>Improvement: Restore context to describe <a href="https://github.com/kotest/kotest/issues/1565">#1565</a> sksamuel</li>
+<li>Breaking Change: Updates method signature of assertSoftly to take object under test as argument Ashish Kumar Joy</li>
+</ul>
+<h4 id="411-june-2020">4.1.1 June 2020</h4>
+<ul>
+<li>Bugfix: Issue with describe spec and the intellij plugin fixed <a href="https://github.com/kotest/kotest/issues/1528">#1528</a></li>
+<li>Bugfix: Incorrect error message with Exhaustive's when under the min iteration count <a href="https://github.com/kotest/kotest/issues/1526">#1526</a></li>
+</ul>
+<h4 id="410-june-2020-blog">4.1.0 June 2020 - <a href="../blog/release_4.1/">Blog</a></h4>
+<ul>
+<li>Feature: The Kotest IntelliJ plugin has gone final. The plugin requires 4.1. or higher of Kotest. https://plugins.jetbrains.com/plugin/14080-kotest</li>
+<li>Feature: Highlight diff when comparing data classes <a href="https://github.com/kotest/kotest/issues/826">#826</a> <a href="https://github.com/kotest/kotest/issues/1242">#1242</a></li>
+<li>Feature: Improve error message in tolerance matchers <a href="https://github.com/kotest/kotest/issues/1230">#1230</a></li>
+<li>Feature: Add Arb for (lat, long) <a href="https://github.com/kotest/kotest/issues/1304">#1304</a></li>
+<li>Feature: Integration with Testcontainers <a href="https://github.com/kotest/kotest/issues/1353">#1353</a></li>
+<li>Feature: x variants for Behavior / Feature / Expect spec <a href="https://github.com/kotest/kotest/issues/1383">#1383</a></li>
+<li>Feature: Add property test global config with before / after prop test callbacks <a href="https://github.com/kotest/kotest/issues/1435">#1435</a></li>
+<li>Feature: Parallel execution test cases in Spec <a href="https://github.com/kotest/kotest/issues/1362">#1362</a></li>
+<li>Feature: Add variable.assertSoftly <a href="https://github.com/kotest/kotest/issues/1427">#1427</a></li>
+<li>Feature: Coroutine helper for timeout <a href="https://github.com/kotest/kotest/issues/1447">#1447</a></li>
+<li>Feature: Add timeout to apply to individual tests when invocations &gt; 1 <a href="https://github.com/kotest/kotest/issues/1442">#1442</a></li>
+<li>Feature: Add shouldExistInOrder matcher <a href="https://github.com/kotest/kotest/issues/1460">#1460</a></li>
+<li>Feature: Added Arb.orNull <a href="https://github.com/kotest/kotest/issues/1414">#1414</a></li>
+<li>Feature: Provide a way to remove test prefixes in the test output when using specs which use prefixes <a href="https://github.com/kotest/kotest/issues/1486">#1486</a></li>
+<li>Feature: Adds shouldCompleteExceptionallyWith matcher <a href="https://github.com/kotest/kotest/issues/1454">#1454</a></li>
+<li>Feature: Exhaustive.merge for two gens with a common supertype <a href="https://github.com/kotest/kotest/issues/1502">#1502</a></li>
+<li>Improvement: Added Byte.shouldBeBetween(min, max) and Arb.bytes <a href="https://github.com/kotest/kotest/issues/1408">#1408</a></li>
+<li>Improvement: Remove kotlintest aliases <a href="https://github.com/kotest/kotest/issues/1457">#1457</a></li>
+<li>Improvement: Parent scopes are not coroutine scopes <a href="https://github.com/kotest/kotest/issues/1488">#1488</a></li>
+<li>Improvement: isolation instead of isolationMode <a href="https://github.com/kotest/kotest/issues/1418">#1418</a></li>
+<li>Improvement: Reflection equality improvements <a href="https://github.com/kotest/kotest/issues/1413">#1413</a></li>
+<li>Improvement: Property tests should report exception of running shrunk input <a href="https://github.com/kotest/kotest/issues/1279">#1279</a></li>
+<li>Improvement: Make beforeProject and afterProject as suspend function <a href="https://github.com/kotest/kotest/issues/1461">#1461</a></li>
+<li>Improvement: Updated arb flat map to accept lists <a href="https://github.com/kotest/kotest/issues/1500">#1500</a></li>
+<li>Improvement: Date generators should allow for specific dates to be selected <a href="https://github.com/kotest/kotest/issues/1354">#1354</a></li>
+<li>Bugfix: Test cases with multiline names broken <a href="https://github.com/kotest/kotest/issues/1441">#1441</a></li>
+<li>Bugfix: Before\AfterProject catch only one Exception <a href="https://github.com/kotest/kotest/issues/1387">#1387</a></li>
+<li>Bugfix: Arb.bind() calls the incorrect constructor <a href="https://github.com/kotest/kotest/issues/1487">#1487</a></li>
+<li>Bugfix: Project config dump doesn't include enums properly <a href="https://github.com/kotest/kotest/issues/1379">#1379</a></li>
+<li>Bugfix: Add Arb.choose that accepts weighted arbs <a href="https://github.com/kotest/kotest/issues/1499">#1499</a></li>
+<li>Bugfix: Arb.list doesn't use ListShrinker <a href="https://github.com/kotest/kotest/issues/1493">#1493</a></li>
+</ul>
+<h4 id="406-june-2020">4.0.6 June 2020</h4>
+<ul>
+<li>Bugfix: Dependencies of assertions-core are now included properly when not using junit runner <a href="https://github.com/kotest/kotest/issues/1425">#1425</a></li>
+<li>Bugfix: checkAll would fail if exhaustive size was very large <a href="https://github.com/kotest/kotest/issues/1456">#1456</a></li>
+<li>Bugfix: Show typeclass on java.nio.filePath would cause stack overflow <a href="https://github.com/kotest/kotest/issues/1313">#1313</a></li>
+</ul>
+<h4 id="405-april-2020">4.0.5 April 2020</h4>
+<ul>
+<li>Bugfix: Focus mode would cause some nested tests to be ignored <a href="https://github.com/kotest/kotest/issues/1376">#1376</a></li>
+<li>Bugfix: Arb.choice would include edgecases in the generated values <a href="https://github.com/kotest/kotest/issues/1406">#1406</a></li>
+<li>Bugfix: Arb.int and Arb.long edgecases included values outside the specified ranged <a href="https://github.com/kotest/kotest/issues/1405">#1405</a></li>
+</ul>
+<h4 id="404-april-2020">4.0.4 April 2020</h4>
+<ul>
+<li>Bugfix: Exceptions of type <code>LinkageError</code>, most commonly <code>ExceptionInInitializerError</code> were not being handled <a href="https://github.com/kotest/kotest/issues/1381">#1381</a></li>
+</ul>
+<h4 id="403-april-2020">4.0.3 April 2020</h4>
+<ul>
+<li>Feature: Koin support now works for koin 2.1 <a href="https://github.com/kotest/kotest/issues/1357">#1357</a></li>
+<li>Deprecation: String context is deprecated in ShouldSpec in favour of a context block. <a href="https://github.com/kotest/kotest/issues/1356">#1356</a></li>
+<li>Improvement: Line breaks added to Collection.containExactly matcher <a href="https://github.com/kotest/kotest/issues/1380">#1380</a></li>
+<li>Improvement: Tolerance matcher emits better failure message (including plus/minus values) <a href="https://github.com/kotest/kotest/issues/1230">#1230</a></li>
+<li>Bugfix: Project config output now writes the correct values of test ordering and isolation mode <a href="https://github.com/kotest/kotest/issues/1379">#1379</a></li>
+<li>Bugfix: Order of autoclose is restored to work like 3.4.x (was undefined in 4.0.x) <a href="https://github.com/kotest/kotest/issues/1384">#1384</a></li>
+<li>Bugfix: Fix shouldContainExactly for arrays <a href="https://github.com/kotest/kotest/issues/1364">#1364</a></li>
+</ul>
+<h4 id="402-april-2020">4.0.2 April 2020</h4>
+<ul>
+<li>Feature: Added filter and map to Exhaustives <a href="https://github.com/kotest/kotest/issues/1343">#1343</a></li>
+<li>Feature: shouldBeInteger matcher using contracts <a href="https://github.com/kotest/kotest/issues/1315">#1315</a></li>
+<li>Bugfix: Fixed issue with xdescribe in describe spec always being active</li>
+<li>Bugfix: Simple tags were using full class names rather than the simple name breaking backwards compatibility <a href="https://github.com/kotest/kotest/issues/1346">#1346</a></li>
+<li>Improvement: Caching result of discovery for increased performance in maven <a href="https://github.com/kotest/kotest/issues/1325">#1325</a></li>
+<li>Bugfix: Closing resources used in classgraph scan <a href="https://github.com/kotest/kotest/issues/1323">#1323</a></li>
+<li>Bugfix: Fixed timeout for coroutine launched inside a test without its own scope <a href="https://github.com/kotest/kotest/issues/1345">#1345</a></li>
+<li>Bugfix: Fix Arb.bind returning only the same value <a href="https://github.com/kotest/kotest/issues/1348">#1348</a></li>
+<li>Bugfix: Restored usage of opentest4j assertions <a href="https://github.com/kotest/kotest/issues/1339">#1339</a></li>
+<li>Bugfix: Fixed missing stacktrace in data driven testing <a href="https://github.com/kotest/kotest/issues/1336">#1336</a></li>
+<li>Bugfix: Fixed Arb.instant always returning same value <a href="https://github.com/kotest/kotest/issues/1322">#1322</a></li>
+<li>Bugfix: Added workaround for gradle 5 bugs.</li>
+</ul>
+<h4 id="401-march-2020">4.0.1 March 2020</h4>
+<ul>
+<li>Improvement: Bumped kotlin to 1.3.71</li>
+<li>Feature: Aded latlong Arb <a href="https://github.com/kotest/kotest/issues/1304">#1304</a></li>
+</ul>
+<h4 id="400-march-2020">4.0.0 March 2020</h4>
+<p>The 4.0.0 release is a large release. With the project rename, the packages have changed and module names have changed.</p>
+<p>Major changes:</p>
+<ul>
+<li>The KotlinTest project is now multi-platform. This means most of the modules now require -jvm to be added if you are working server side JVM only. For example, <code>io.kotlintest:kotlintest-runner-junit5</code> is now <code>io.kotest:kotest-runner-junit5-jvm</code> taking into account package name changes and the platform suffix.</li>
+<li>The main assertions library is now <code>kotest-assertions-core</code> and many new assertions (matchers) have been added. This changelog won't list them all. It is simpler to view the <a href="doc/matchers.md">full list</a>.</li>
+<li>The property test library has moved to a new module <code>kotest-property</code> and been reworked to include many new features. See new documentation <a href="doc/property_testing.md">here</a>. The old property test classes are deprecated and will be removed in a future release.</li>
+<li>Many new property test generators have been added. The full list is <a href="doc/generators.md">here</a>.</li>
+<li>Composable specs have been added in the form of <em>Test Factories</em>.</li>
+<li>Project config no longer requires placing in a special package name, but can be placed anywhere in the <a href="doc/project_config.md">classpath</a>.</li>
+<li>@Autoscan has been added for <a href="doc/listeners.md">listeners</a> and extensions.</li>
+<li>Added DSL version of test lifecycle <a href="doc/listeners.md#dsl-methods">callbacks</a>.</li>
+</ul>
+<p>Minor changes.</p>
+<ul>
+<li>Feature: A new JSoup assertions module has been added. <a href="https://github.com/kotest/kotest/issues/1028">#1028</a></li>
+<li>Feature: Stats matchers <a href="https://github.com/kotest/kotest/issues/851">#851</a></li>
+<li>Feature: Experimental Robolectric Support <a href="https://github.com/kotest/kotest/issues/926">#926</a></li>
+<li>Bugfix: shouldNotThrowAny return T instead of Unit <a href="https://github.com/kotest/kotest/issues/981">#981</a></li>
+<li>Internal: Removed dependency on Arrow to avoid version conflicts</li>
+<li>Feature: Project wide default test case config</li>
+<li>Feature: whenReady(f) has been replaced with f.whenReady which is coroutine enabled</li>
+<li>Feature: Alphabetic test case ordering</li>
+<li>Feature: All test callbacks are now coroutine enabled</li>
+<li>Feature: forEachAsClue</li>
+<li>Improvement: Support Koin 2.1.0</li>
+<li>Improvement: Explicitly allow internal classes as specs</li>
+<li>Feature: Klock matcher support <a href="https://github.com/kotest/kotest/issues/1214">#1214</a></li>
+<li>Feature: JDBC matcher support <a href="https://github.com/kotest/kotest/issues/1221">#1221</a></li>
+</ul>
+<h4 id="342">3.4.2</h4>
+<ul>
+<li>Bugfix: Enhances SpringListener to work correctly with all Spring's Listeners <a href="https://github.com/kotest/kotest/issues/950">#950</a></li>
+</ul>
+<h4 id="341">3.4.1</h4>
+<ul>
+<li>Internal: Remove JUnit redeclarations <a href="https://github.com/kotest/kotest/issues/927">#927</a></li>
+<li>Feature: Add infix modifier to more Arrow matchers <a href="https://github.com/kotest/kotest/issues/921">#921</a></li>
+<li>Feature: BigDecimal range matchers <a href="https://github.com/kotest/kotest/issues/932">#932</a></li>
+<li>Feature: monotonically/strictly increasing/decreasing matcher <a href="https://github.com/kotest/kotest/issues/850">#850</a></li>
+<li>Feature: Fixes shouldBe and shouldNotBe comparison <a href="https://github.com/kotest/kotest/issues/913">#913</a></li>
+<li>Feature: Add overload to Ktor shouldHaveStatus matcher <a href="https://github.com/kotest/kotest/issues/914">#914</a></li>
+<li>Feature: Fail parent tests when child tests fail <a href="https://github.com/kotest/kotest/issues/935">#935</a></li>
+</ul>
+<h4 id="340">3.4.0</h4>
+<ul>
+<li>Feature: Support for running tests with Koin <a href="https://github.com/kotest/kotest/issues/907">#907</a></li>
+<li>Feature: Global timeout option can be applied across all tests <a href="https://github.com/kotest/kotest/issues/858">#858</a></li>
+<li>Feature: Introduced await as a more feature rich version of eventually <a href="https://github.com/kotest/kotest/issues/888">#888</a> <a href="https://github.com/kotest/kotest/issues/793">#793</a></li>
+<li>Feature: Array overloads for all matchers <a href="https://github.com/kotest/kotest/issues/904">#904</a></li>
+<li>Feature: Support Spring's Test Listeners <a href="https://github.com/kotest/kotest/issues/887">#887</a></li>
+<li>Feature: Limit Parallelism for some specs <a href="https://github.com/kotest/kotest/issues/786">#786</a></li>
+<li>Feature: Added new project listener <a href="https://github.com/kotest/kotest/issues/859">#859</a></li>
+<li>Feature: Change System extensions to support different modes <a href="https://github.com/kotest/kotest/issues/843">#843</a></li>
+<li>Feature: Print project configurations <a href="https://github.com/kotest/kotest/issues/841">#841</a> <a href="https://github.com/kotest/kotest/issues/866">#866</a></li>
+<li>Feature: New date matcher variations for month, time units, day of week, etc <a href="https://github.com/kotest/kotest/issues/899">#899</a></li>
+<li>Feature: Multi line diff min line config option <a href="https://github.com/kotest/kotest/issues/706">#706</a></li>
+<li>Feature: Allow nested describe scope in DescribeSpec <a href="https://github.com/kotest/kotest/issues/905">#905</a></li>
+<li>Feature: Add matcher for Dates to ignore timezone <a href="https://github.com/kotest/kotest/issues/891">#891</a></li>
+<li>Feature: Reflection matchers <a href="https://github.com/kotest/kotest/issues/614">#614</a> <a href="https://github.com/kotest/kotest/issues/894">#894</a></li>
+<li>Feature: Added string matchers for single line and size between <a href="https://github.com/kotest/kotest/issues/853">#853</a></li>
+<li>Feature: Added contracts and lambda variations of matchers for arrow types <a href="https://github.com/kotest/kotest/issues/802">#802</a> <a href="https://github.com/kotest/kotest/issues/890">#890</a> <a href="https://github.com/kotest/kotest/issues/834">#834</a></li>
+<li>Feature: Added matchers for LocalTime <a href="https://github.com/kotest/kotest/issues/889">#889</a></li>
+<li>Feature: Added Zoned and Offset date time variants of shouldBeToday <a href="https://github.com/kotest/kotest/issues/820">#820</a></li>
+<li>Feature: Add new throwable matchers <a href="https://github.com/kotest/kotest/issues/864">#864</a></li>
+<li>Feature: Added matchers for Result <a href="https://github.com/kotest/kotest/issues/836">#836</a> <a href="https://github.com/kotest/kotest/issues/861">#861</a></li>
+<li>Feature: Added big decimal matchers <a href="https://github.com/kotest/kotest/issues/875">#875</a></li>
+<li>Feature: Added shouldBeSymbolicLink and shouldHaveParent matchers for files <a href="https://github.com/kotest/kotest/issues/871">#871</a></li>
+<li>Feature: Json Matchers from resources <a href="https://github.com/kotest/kotest/issues/873">#873</a></li>
+<li>Feature: Added shouldBeZero and shouldNotBeZero matcher for number types <a href="https://github.com/kotest/kotest/issues/819">#819</a> <a href="https://github.com/kotest/kotest/issues/848">#848</a></li>
+<li>Feature: Added shouldContainFiles matcher for path <a href="https://github.com/kotest/kotest/issues/854">#854</a></li>
+<li>Feature: The URI matchers should also work on URLs. <a href="https://github.com/kotest/kotest/issues/818">#818</a></li>
+<li>Feature: Allow setting isolation mode in project config <a href="https://github.com/kotest/kotest/issues/842">#842</a></li>
+<li>Feature: Added containFileDeep File matcher <a href="https://github.com/kotest/kotest/issues/846">#846</a></li>
+<li>Feature: Implements SkipTestException <a href="https://github.com/kotest/kotest/issues/805">#805</a></li>
+<li>Feature: Implements Infinity and NaN Double Matchers <a href="https://github.com/kotest/kotest/issues/801">#801</a></li>
+<li>Feature: Add asClue helper function <a href="https://github.com/kotest/kotest/issues/784">#784</a></li>
+<li>Feature: Add infix map matchers using Pair <a href="https://github.com/kotest/kotest/issues/792">#792</a></li>
+<li>Feature: Add Short and Btyte primitive gens <a href="https://github.com/kotest/kotest/issues/773">#773</a></li>
+<li>Feature: Implement Gen.take(n) function <a href="https://github.com/kotest/kotest/issues/758">#758</a></li>
+<li>Feature: Implement Gen.next(predicate) function <a href="https://github.com/kotest/kotest/issues/759">#759</a></li>
+<li>Feature: Add support to change sizes of generated lists, sets, maps <a href="https://github.com/kotest/kotest/issues/757">#757</a></li>
+<li>Feature: Allow exclusion/inclusion tags at runtime <a href="https://github.com/kotest/kotest/issues/761">#761</a></li>
+<li>Bugfix: Added missing part of shouldHaveLength message <a href="https://github.com/kotest/kotest/issues/870">#870</a>)</li>
+<li>Bugfix: Updated json matchers to include actual json in the error</li>
+<li>Bugfix: Fix for before/after test listeners not failing tests <a href="https://github.com/kotest/kotest/issues/842">#842</a> <a href="https://github.com/kotest/kotest/issues/865">#865</a></li>
+<li>Bugfix: Changed autoClose to accept an AutoCloseable <a href="https://github.com/kotest/kotest/issues/847">#847</a></li>
+<li>Bugfix: Fixed left vs right issue <a href="https://github.com/kotest/kotest/issues/612">#612</a></li>
+<li>Bugfix: Ensure specs that fail in initialisation fail a Maven build <a href="https://github.com/kotest/kotest/issues/832">#832</a></li>
+<li>Bugfix: Fixed test engine reporting when there is an exception in either the init block, beforeSpec or the afterSpec method <a href="https://github.com/kotest/kotest/issues/771">#771</a></li>
+<li>Internal: io.kotlintest.Result renamed to io.kotlintest.MatcherResult to avoid conflict with new Kotlin class kotlin.Result <a href="https://github.com/kotest/kotest/issues/898">#898</a></li>
+</ul>
+<h4 id="330">3.3.0</h4>
+<ul>
+<li>Feature: Intellij Plugin now available!</li>
+<li>Feature: FunSpec now allows parent context blocks</li>
+<li>Feature: java.time between matcher (<a href="https://github.com/kotest/kotest/issues/694">#694</a>)</li>
+<li>Feature: Constant 'now' listeners (<a href="https://github.com/kotest/kotest/issues/693">#693</a>)</li>
+<li>Feature: PITest plugin (<a href="https://github.com/kotest/kotest/issues/687">#687</a>)</li>
+<li>Feature: Spring mocking injection @MockBean @MockkBean (<a href="https://github.com/kotest/kotest/issues/684">#684</a>)</li>
+<li>Feature: instanceOf and typeOf matchers to use the casted value (<a href="https://github.com/kotest/kotest/issues/695">#695</a>)</li>
+<li>Feature: Digest Matchers <a href="https://github.com/kotest/kotest/issues/667">#667</a></li>
+<li>Feature: continually assertion function <a href="https://github.com/kotest/kotest/issues/643">#643</a></li>
+<li>Feature: Add project config option for <code>assertSoftly</code> <a href="https://github.com/kotest/kotest/issues/512">#512</a> (<a href="https://github.com/kotest/kotest/issues/655">#655</a>)</li>
+<li>Feature: Implement System Security Manager Extensions (<a href="https://github.com/kotest/kotest/issues/640">#640</a>)</li>
+<li>Feature: Implement System Environment Extension (<a href="https://github.com/kotest/kotest/issues/633">#633</a>)</li>
+<li>Feature: Implement shouldBeOneOf matcher and assertions (<a href="https://github.com/kotest/kotest/issues/647">#647</a>)</li>
+<li>Feature: Add nullability matchers with Kotlin Contracts (<a href="https://github.com/kotest/kotest/issues/602">#602</a>) (<a href="https://github.com/kotest/kotest/issues/646">#646</a>)</li>
+<li>Feature: SystemProperty Test Helpers <a href="https://github.com/kotest/kotest/issues/524">#524</a> (<a href="https://github.com/kotest/kotest/issues/608">#608</a>)</li>
+<li>Feature: Timezone / Locale Extension <a href="https://github.com/kotest/kotest/issues/587">#587</a> (<a href="https://github.com/kotest/kotest/issues/609">#609</a>)</li>
+<li>Feature: Move extensions to Kotlintest-Extensions module (<a href="https://github.com/kotest/kotest/issues/629">#629</a>)</li>
+<li>Feature: Provide range-based numeric generators and javax.time generators <a href="https://github.com/kotest/kotest/issues/530">#530</a> (<a href="https://github.com/kotest/kotest/issues/543">#543</a>)</li>
+<li>Feature: Extended word spec (<a href="https://github.com/kotest/kotest/issues/635">#635</a>)</li>
+<li>Feature: Implement shouldNotThrow matchers (<a href="https://github.com/kotest/kotest/issues/603">#603</a>)</li>
+<li>Improvement: Make "condensed" multi-line diffs configurable <a href="https://github.com/kotest/kotest/issues/607">#607</a></li>
+<li>Improvement: Allow Arrow Either extensions to support nullable types (<a href="https://github.com/kotest/kotest/issues/613">#613</a>)</li>
+<li>Improvement: Enables test bang on all specs (<a href="https://github.com/kotest/kotest/issues/606">#606</a>)</li>
+<li>Improvement: Add property testing extensions for custom generators (<a href="https://github.com/kotest/kotest/issues/506">#506</a>)</li>
+<li>Improvement: Added issue flag in config <a href="https://github.com/kotest/kotest/issues/525">#525</a></li>
+<li>Bugfix: Added support for package selectors from junit discovery requests <a href="https://github.com/kotest/kotest/issues/597">#597</a></li>
+<li>Bugfix: Disabled top level tests are not marked as ignored in JUnit <a href="https://github.com/kotest/kotest/issues/656">#656</a></li>
+<li>Bugfix: Fix containOnlyOnce which return true when no occurrence (<a href="https://github.com/kotest/kotest/issues/660">#660</a>)</li>
+<li>Internal: Auto deploy snapshot on each travis build</li>
+<li>Internal: Remove all deprecated matchers/assertions (<a href="https://github.com/kotest/kotest/issues/653">#653</a>)</li>
+</ul>
+<h4 id="321">3.2.1</h4>
+<ul>
+<li>Feature: AnnotationSpec now has a <code>expected</code> exception configuration <a href="https://github.com/kotest/kotest/issues/527">#527</a> <a href="https://github.com/kotest/kotest/issues/559">#559</a></li>
+<li>Feature: BehaviorSpec gained extra nesting possibilities, with <code>And</code> between any other keywords <a href="https://github.com/kotest/kotest/issues/562">#562</a> <a href="https://github.com/kotest/kotest/issues/593">#593</a></li>
+<li>Bugfix: Independent tests were sharing a thread, and one test could timeout a different one for apparently no reason <a href="https://github.com/kotest/kotest/issues/588">#588</a> <a href="https://github.com/kotest/kotest/issues/590">#590</a></li>
+<li>Improvement: Documentation on TestConfig.invocations clarified <a href="https://github.com/kotest/kotest/issues/591">#591</a> <a href="https://github.com/kotest/kotest/issues/592">#592</a></li>
+</ul>
+<h4 id="320">3.2.0</h4>
+<ul>
+<li>Feature: Support for coroutines directly from tests <a href="https://github.com/kotest/kotest/issues/386">#386</a></li>
+<li>Feature: Isolation mode added to more finely control the instances in which tests execute <a href="https://github.com/kotest/kotest/issues/379">#379</a></li>
+<li>Feature: When re-running tests, execute previously failing specs first <a href="https://github.com/kotest/kotest/issues/388">#388</a></li>
+<li>Feature: Support for @Before and @After in AnnotationSpec for easier migration from JUnit <a href="https://github.com/kotest/kotest/issues/513">#513</a></li>
+<li>Feature: Support package selectors in discovery <a href="https://github.com/kotest/kotest/issues/461">#461</a></li>
+<li>Improvement: The test listeners have been reworked to make them more powerful and clearer <a href="https://github.com/kotest/kotest/issues/494">#494</a></li>
+<li>Improvement: Better support for multi-line string comparisions <a href="https://github.com/kotest/kotest/issues/402">#402</a></li>
+<li>Improvement: Gen.oneOf should be covariant <a href="https://github.com/kotest/kotest/issues/471">#471</a></li>
+<li>Improvement: Double should have oppostive matchers for shouldBePositive and shouldBeNegative <a href="https://github.com/kotest/kotest/issues/435">#435</a></li>
+<li>Improvement: New matchers <a href="https://github.com/kotest/kotest/issues/393">#393</a> <a href="https://github.com/kotest/kotest/issues/325">#325</a></li>
+<li>Bugfix: BehaviorSpec doesn't allow config bug <a href="https://github.com/kotest/kotest/issues/495">#495</a></li>
+<li>Bugfix: Error when throwing AssertionError from inside a shouldThrow{} block <a href="https://github.com/kotest/kotest/issues/479">#479</a></li>
+<li>Bugfix: Fix test timeouts <a href="https://github.com/kotest/kotest/issues/476">#476</a></li>
+<li>Bugfix: Fix annotation spec failure message <a href="https://github.com/kotest/kotest/issues/539">#539</a></li>
+<li>Internal: Build now uses Kotlin 1.3 <a href="https://github.com/kotest/kotest/issues/379">#379</a></li>
+<li>Internal: Upgraded class scanning to use ClassGraph instead of Reflections <a href="https://github.com/kotest/kotest/issues/459">#459</a></li>
+</ul>
+<h4 id="3111">3.1.11</h4>
+<ul>
+<li>Feature: Infix support to String matchers <a href="https://github.com/kotest/kotest/issues/443">#443</a></li>
+<li>Feature: Infix support to files, floats, sequences, types and uri matchers <a href="https://github.com/kotest/kotest/issues/445">#445</a></li>
+<li>Feature: Infix support to Double matchers <a href="https://github.com/kotest/kotest/issues/429">#429</a></li>
+<li>Feature: Infix suport to Map matchers <a href="https://github.com/kotest/kotest/issues/417">#417</a></li>
+<li>Feature: <code>shouldNotBePositive</code> and <code>shouldNotBeNegative</code> for Double matchers <a href="https://github.com/kotest/kotest/issues/435">#435</a></li>
+<li>Feature: Support for Duration in time matchers <a href="https://github.com/kotest/kotest/issues/423">#423</a></li>
+<li>Feature: arrow-assertion Failure matcher that checks underlying throwable equality <a href="https://github.com/kotest/kotest/issues/427">#427</a></li>
+<li>Feature: <code>shouldNotBeTrue</code> and <code>shouldNotBeFalse</code> for Boolean matchers <a href="https://github.com/kotest/kotest/issues/452">#452</a></li>
+<li>Improvement: Documentation for <code>Gen.int()</code> <a href="https://github.com/kotest/kotest/issues/419">#419</a></li>
+<li>Improvement: Javadocs for Date matchers <a href="https://github.com/kotest/kotest/issues/420">#420</a></li>
+<li>Improvement: Better error message for empty collection in matchers <a href="https://github.com/kotest/kotest/issues/438">#438</a></li>
+<li>Improvement: Better stacktrace filtering from Failures class <a href="https://github.com/kotest/kotest/issues/465">#465</a></li>
+<li>Bugfix: Double matcher <code>shouldNotBeExactly</code> had the wrong implementation <a href="https://github.com/kotest/kotest/issues/432">#432</a></li>
+<li>Bugfix: Single-thread test had <code>before</code> and <code>after</code> running in separate thread from the test <a href="https://github.com/kotest/kotest/issues/447">#447</a></li>
+<li>Bugfix: Test with invocations &gt; 1 wouldn't complete if test failed <a href="https://github.com/kotest/kotest/issues/413">#413</a></li>
+<li>Bugfix: Wrong assertion on <code>shouldThrow</code> <a href="https://github.com/kotest/kotest/issues/479">#479</a> <a href="https://github.com/kotest/kotest/issues/484">#484</a></li>
+</ul>
+<h4 id="3110">3.1.10</h4>
+<ul>
+<li>Feature: Infix version of some inline matchers, eg <code>date1 shouldHaveSameYearAs date2</code> (<a href="https://github.com/kotest/kotest/issues/404">#404</a> <a href="https://github.com/kotest/kotest/issues/407">#407</a> <a href="https://github.com/kotest/kotest/issues/409">#409</a>)</li>
+<li>Feature: Infix support for int and long matchers (<a href="https://github.com/kotest/kotest/issues/400">#400</a>)</li>
+<li>Feature: Added startsWith/endsWith matchers on collections (<a href="https://github.com/kotest/kotest/issues/393">#393</a>)</li>
+<li>Improvement: Use unambiguous representations in collection matchers (<a href="https://github.com/kotest/kotest/issues/392">#392</a>)</li>
+<li>Improvement: Collection matchers now work on <code>Sequence</code> too (<a href="https://github.com/kotest/kotest/issues/391">#391</a>)</li>
+<li>Improvement: Added shouldThrowUnit variant of shouldThrow (<a href="https://github.com/kotest/kotest/issues/387">#387</a>)</li>
+<li>Fix: shouldBe on arrays without static type (<a href="https://github.com/kotest/kotest/issues/397">#397</a>)</li>
+</ul>
+<h4 id="319">3.1.9</h4>
+<ul>
+<li>Feature: Add soft assertions (<a href="https://github.com/kotest/kotest/issues/373">#373</a>)</li>
+<li>Feature: <code>sortedWith</code> (and related) matchers. (<a href="https://github.com/kotest/kotest/issues/383">#383</a>)</li>
+<li>Improvement: Removed unnecessary <code>Comparable&lt;T&gt;</code> upper-bound from <code>sortedWith</code> matchers. (<a href="https://github.com/kotest/kotest/issues/389">#389</a>)</li>
+<li>Improvement: Improve StringShrinker algorithm (<a href="https://github.com/kotest/kotest/issues/377">#377</a>)</li>
+<li>Bugfix: shouldBeBetween should be shouldBe instead of shouldNotBe (<a href="https://github.com/kotest/kotest/issues/390">#390</a>)</li>
+<li>Bugfix: Fix beLeft is comparing against Either.Right instead of Either.Left (<a href="https://github.com/kotest/kotest/issues/374">#374</a>)</li>
+<li>Internal: Naming executor services for jmx monitoring</li>
+</ul>
+<h4 id="318">3.1.8</h4>
+<ul>
+<li>Bugfix: Skip tests when MethodSelector is set <a href="https://github.com/kotest/kotest/issues/367">#367</a> (means can run a single test in intellij)</li>
+<li>Bugfix: Fix error when running single test in kotlintest-tests (<a href="https://github.com/kotest/kotest/issues/371">#371</a>)</li>
+<li>Bugfix Fix table testing forNone and Double between matcher (<a href="https://github.com/kotest/kotest/issues/372">#372</a>)</li>
+<li>Improvement: Remove matcher frames from stacktraces (<a href="https://github.com/kotest/kotest/issues/369">#369</a>)</li>
+<li>Improvement: Use less ambiguous string representations in equality errors (<a href="https://github.com/kotest/kotest/issues/368">#368</a>)</li>
+<li>Improvement: Improve String equality error messages (<a href="https://github.com/kotest/kotest/issues/366">#366</a>)</li>
+<li>Internal: Update kotlin to 1.2.50 (<a href="https://github.com/kotest/kotest/issues/365">#365</a>)</li>
+</ul>
+<h4 id="317">3.1.7</h4>
+<ul>
+<li>Feature: Added Int/Long.shouldBeNegative and Int/Long.shouldBePositive matchers <a href="https://github.com/kotest/kotest/issues/325">#325</a></li>
+<li>Feature: Added Double.shouldBeNegative and Double.shouldBePositive matchers <a href="https://github.com/kotest/kotest/issues/325">#325</a></li>
+<li>Feature: Added collection.shouldBeLargerThan(c), collection.shouldBeSmallerThan(c), collection.shouldBeSameSizeAs(c) <a href="https://github.com/kotest/kotest/issues/325">#325</a></li>
+<li>Feature: Added collection.shouldHaveAtLeastSize(n) and collection.shouldHaveAtMostSize(n) matchers.</li>
+<li>Feature: Added matcher for uri.opaque</li>
+<li>Feature: Add matchers containsExactly and containsExactlyInAnyOrder (<a href="https://github.com/kotest/kotest/issues/360">#360</a>)</li>
+<li>Feature: Added test case filters</li>
+<li>Bugfix: Running single tests with Gradle command line <a href="https://github.com/kotest/kotest/issues/356">#356</a></li>
+<li>Change: Removed coroutine support until it is no longer experimental</li>
+<li>Improvement: Optimize sorted matcher (<a href="https://github.com/kotest/kotest/issues/359">#359</a>)</li>
+<li>Improvement: Allow type matchers to match nullable values. (<a href="https://github.com/kotest/kotest/issues/358">#358</a>)</li>
+<li>Improvement: Allow nullable receivers for string matchers. (<a href="https://github.com/kotest/kotest/issues/352">#352</a>)</li>
+<li>Improvement: Run tests for all rows in a table, even after errors. (<a href="https://github.com/kotest/kotest/issues/351">#351</a>)</li>
+</ul>
+<h4 id="316">3.1.6</h4>
+<ul>
+<li>Specs now support co-routines <a href="https://github.com/kotest/kotest/issues/332">#332</a></li>
+<li>Extension function version of inspectors.</li>
+<li>Inspectors for arrow NonEmptyLists</li>
+<li>New style of data driven tests with parameter name detection</li>
+<li>Extension function style of assert all for property testing</li>
+<li>Updated string matchers to show better error when input is null or empty string</li>
+<li>Allow nullable arguments to more matcher functions. <a href="https://github.com/kotest/kotest/issues/350">#350</a></li>
+<li>Added extension functions for table tests <a href="https://github.com/kotest/kotest/issues/349">#349</a></li>
+</ul>
+<h4 id="315">3.1.5</h4>
+<ul>
+<li>Fix for bug in gradle which doesn't support parallel test events</li>
+<li>Bring back Duration extension properties <a href="https://github.com/kotest/kotest/issues/343">#343</a></li>
+<li>Added fix for gradle 4.7 issues <a href="https://github.com/kotest/kotest/issues/336">#336</a></li>
+<li>shouldBe does not handle java long  <a href="https://github.com/kotest/kotest/issues/346">#346</a></li>
+<li>Fixing function return type in documentation for forAll() (<a href="https://github.com/kotest/kotest/issues/345">#345</a>)</li>
+<li>Fixing typos in reference.md (<a href="https://github.com/kotest/kotest/issues/344">#344</a>)</li>
+<li>Make the Table &amp; Row data classes covariant (<a href="https://github.com/kotest/kotest/issues/342">#342</a>)</li>
+<li>Fixing argument names in ReplaceWith of deprecated matchers (<a href="https://github.com/kotest/kotest/issues/341">#341</a>)</li>
+</ul>
+<h4 id="314">3.1.4</h4>
+<ul>
+<li>Fix eventually nanos conversion (<a href="https://github.com/kotest/kotest/issues/340">#340</a>)</li>
+<li>Improve array shouldBe overloads (<a href="https://github.com/kotest/kotest/issues/339">#339</a>)</li>
+</ul>
+<h4 id="313">3.1.3</h4>
+<ul>
+<li>Added workaround for gradle 4.7/4.8 error <a href="https://github.com/kotest/kotest/issues/336">#336</a></li>
+<li>Fix URI path and URI parameter matchers (<a href="https://github.com/kotest/kotest/issues/338">#338</a>)</li>
+</ul>
+<h4 id="312">3.1.2</h4>
+<ul>
+<li>Added arrow NonEmptyList isUnique matchers</li>
+<li>Added Float and List Shrinker</li>
+<li>Added inspecting and extracting helper functions. (<a href="https://github.com/kotest/kotest/issues/334">#334</a>)</li>
+<li>Allow tags to be added to specs for all test cases <a href="https://github.com/kotest/kotest/issues/333">#333</a></li>
+<li>Support randomized order of top level tests <a href="https://github.com/kotest/kotest/issues/328">#328</a></li>
+</ul>
+<h4 id="311">3.1.1</h4>
+<ul>
+<li>Focus option for top level tests <a href="https://github.com/kotest/kotest/issues/329">#329</a></li>
+<li>Improve shrinkage <a href="https://github.com/kotest/kotest/issues/331">#331</a></li>
+<li>Updated readme for custom generators <a href="https://github.com/kotest/kotest/issues/313">#313</a></li>
+<li>Added generator for UUIDs</li>
+<li>Fixed bug with auto-close not being called. Deprecated ProjectExtension in favour of TestListener.</li>
+<li>Added a couple of edge case matchers to the arrow extension; added arrow matchers for lists.</li>
+</ul>
+<h2 id="version-310">Version 3.1.0</h2>
+<ul>
+<li><strong>Simplified Setup</strong></li>
+</ul>
+<p>In KotlinTest 3.1.x it is sufficent to enable JUnit in the test block of your gradle build
+ instead of using the gradle junit plugin. This step is the same as for any test framework
+ that uses the JUnit Platform.</p>
+<p>Assuming you have gradle 4.6 or above, then setup your test block like this:</p>
+<pre><code class="language-groovy">test {
+    useJUnitPlatform()
+}
+</code></pre>
+<p>You can additionally enable extra test logging:</p>
+<pre><code class="language-groovy">test {
+    useJUnitPlatform()
+    testLogging {
+        events &quot;FAILED&quot;, &quot;SKIPPED&quot;, &quot;STANDARD_OUT&quot;, &quot;STANDARD_ERROR&quot;
+    }
+}
+</code></pre>
+<ul>
+<li><strong>Instance Per Test for all Specs</strong></li>
+</ul>
+<p>In the 3.0.x train, the ability to allow an instance per test was removed from some spec styles due to
+implementation difficulties. This has been addressed in 3.1.x and so all spec styles now allow instance
+per test as in the 2.0.x releases. Note: The default value is false, so tests will use a single shared
+instance of the spec for all tests unless the <code>isInstancePerTest()</code> function is overriden to return true.</p>
+<ul>
+<li><strong>Breaking Change: Config Syntax</strong></li>
+</ul>
+<p>The syntax for config has now changed. Instead of a function call after the test has been defined, it is
+now specified after the name of the test.</p>
+<p>So, instead of:</p>
+<pre><code class="language-kotlin">&quot;this is a test&quot; {
+}.config(...)
+</code></pre>
+<p>You would now do:</p>
+<pre><code class="language-kotlin">&quot;this is a test&quot;.config(...) {
+}
+</code></pre>
+<ul>
+<li><strong>Matchers as extension functions</strong></li>
+</ul>
+<p>All matchers can now be used as extension functions. So instead of:</p>
+<pre><code class="language-kotlin">file should exist()
+
+or
+
+listOf(1, 2) should containNull()
+</code></pre>
+<p>You can do:</p>
+<pre><code class="language-kotlin">file.shouldExist()
+
+or
+
+listOf(1, 2).shouldContainNull()
+</code></pre>
+<p>Note: The infix style is <strong>not</strong> deprecated and will be supported in future releases, but the extension function
+is intended to be the preferred style moving forward as it allows discovery in the IDE.</p>
+<ul>
+<li><strong>Dozens of new Matchers</strong></li>
+</ul>
+<p><em>even</em> and <em>odd</em></p>
+<p>Tests that an Int is even or odd:</p>
+<pre><code class="language-kotlin">4 should beEven()
+3 shouldNot beEven()
+
+3 should beOdd()
+4 shouldNot beOdd()
+</code></pre>
+<p><em>beInRange</em></p>
+<p>Asserts that an int or long is in the given range:</p>
+<pre><code class="language-kotlin">3 should beInRange(1..10)
+4 should beInRange(1..3)
+</code></pre>
+<p><em>haveElementAt</em></p>
+<p>Checks that a collection contains the given element at a specified index:</p>
+<pre><code class="language-kotlin">listOf(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;) should haveElementAt(1, &quot;b&quot;)
+listOf(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;) shouldNot haveElementAt(1, &quot;c&quot;)
+</code></pre>
+<p>Help out the type inferrer when using nulls:</p>
+<pre><code class="language-kotlin">listOf(&quot;a&quot;, &quot;b&quot;, null) should haveElementAt&lt;String?&gt;(2, null)
+</code></pre>
+<p><em>readable</em>, <em>writeable</em>, <em>executable</em> and <em>hidden</em></p>
+<p>Tests if a file is readable, writeable, or hidden:</p>
+<pre><code class="language-kotlin">file should beRadable()
+file should beWriteable()
+file should beExecutable()
+file should beHidden()
+</code></pre>
+<p><em>absolute</em> and <em>relative</em></p>
+<p>Tests if a file's path is relative or absolute.</p>
+<pre><code class="language-kotlin">File(&quot;/usr/home/sam&quot;) should beAbsolute()
+File(&quot;spark/bin&quot;) should beRelative()
+</code></pre>
+<p><em>startWithPath(path)</em></p>
+<p>Tests if a file's path begins with the specified prefix:</p>
+<pre><code class="language-kotlin">File(&quot;/usr/home/sam&quot;) should startWithPath(&quot;/usr/home&quot;)
+File(&quot;/usr/home/sam&quot;) shouldNot startWithPath(&quot;/var&quot;)
+</code></pre>
+<p><em>haveSameHashCodeAs(other)</em></p>
+<p>Asserts that two objects have the same hash code.</p>
+<pre><code class="language-kotlin">obj1 should haveSameHashCodeAs(obj2)
+&quot;hello&quot; shouldNot haveSameHashCodeAs(&quot;world&quot;)
+</code></pre>
+<p><em>haveSameLengthAs(other)</em></p>
+<p>Asserts that two strings have the same length.</p>
+<pre><code class="language-kotlin">&quot;hello&quot; should haveSameLengthAs(&quot;world&quot;)
+&quot;hello&quot; shouldNot haveSameLengthAs(&quot;you&quot;)
+</code></pre>
+<p><em>haveScheme, havePort, haveHost, haveParameter, havePath, haveFragment</em></p>
+<p>Matchers for URIs:</p>
+<pre><code class="language-kotlin">val uri = URI.create(&quot;https://localhost:443/index.html?q=findme#results&quot;)
+uri should haveScheme(&quot;https&quot;)
+uri should haveHost(&quot;localhost&quot;)
+uri should havePort(443)
+uri should havePath(&quot;/index.html&quot;)
+uri should haveParameter(&quot;q&quot;)
+uri should haveFragment(&quot;results&quot;)
+</code></pre>
+<ul>
+<li>Date matchers - before / after / haveSameYear / haveSameDay / haveSameMonth / within</li>
+<li>Collections - containNull, containDuplicates</li>
+<li>Futures - completed, cancelled</li>
+<li>String - haveLineCount, contain(regex)</li>
+<li>
+<p>Types - haveAnnotation(class)</p>
+</li>
+<li>
+<p><strong>Arrow matcher module</strong></p>
+</li>
+</ul>
+<p>A new module has been added which includes matchers for <a href="http://arrow-kt.io">Arrow</a> - the popular and awesome
+ functional programming library for Kotlin. To include this module add <code>kotlintest-assertions-arrow</code> to your build.</p>
+<p>The included matchers are:</p>
+<p><em>Option</em> - Test that an <code>Option</code> has the given value or is a <code>None</code>. For example:</p>
+<pre><code class="language-kotlin">val option = Option.pure(&quot;foo&quot;)
+option should beSome(&quot;foo&quot;)
+
+val none = None
+none should beNone()
+</code></pre>
+<p><em>Either</em>- Test that an <code>Either</code> is either a <code>Right</code> or <code>Left</code>. For example:</p>
+<pre><code class="language-kotlin">Either.right(&quot;boo&quot;) should beRight(&quot;boo&quot;)
+Either.left(&quot;boo&quot;) should beLeft(&quot;boo&quot;)
+</code></pre>
+<p><em>NonEmptyList</em>- A collection (no pun intended) of matchers for Arrow's <code>NonEmptyList</code>.
+These mostly mirror the equivalent <code>Collection</code> matchers but for NELs. For example:</p>
+<pre><code class="language-kotlin">NonEmptyList.of(1, 2, null).shouldContainNull()
+NonEmptyList.of(1, 2, 3, 4).shouldBeSorted&lt;Int&gt;()
+NonEmptyList.of(1, 2, 3, 3).shouldHaveDuplicates()
+NonEmptyList.of(1).shouldBeSingleElement(1)
+NonEmptyList.of(1, 2, 3).shouldContain(2)
+NonEmptyList.of(1, 2, 3).shouldHaveSize(3)
+NonEmptyList.of(1, 2, 3).shouldContainNoNulls()
+NonEmptyList.of(null, null, null).shouldContainOnlyNulls()
+NonEmptyList.of(1, 2, 3, 4, 5).shouldContainAll(3, 2, 1)
+</code></pre>
+<p><em>Try</em> - Test that a <code>Try</code> is either <code>Success</code> or <code>Failure</code>.</p>
+<pre><code class="language-kotlin">Try.Success(&quot;foo&quot;) should beSuccess(&quot;foo&quot;)
+Try.Failure&lt;Nothing&gt;(RuntimeException()) should beFailure()
+</code></pre>
+<p><em>Validation</em> - Asserts that a <code>Validation</code> is either <code>Valid</code> or an <code>Invalid</code></p>
+<pre><code class="language-kotlin">Valid(&quot;foo&quot;) should beValid()
+Invalid(RuntimeException()) should beInvalid()
+</code></pre>
+<ul>
+<li><strong>Generator Bind</strong></li>
+</ul>
+<p>A powerful way of generating random class instances from primitive generators is to use the new <code>bind</code> function.
+A simple example is to take a data class of two fields, and then use two base generators and bind them to create
+random values of that class.</p>
+<pre><code class="language-kotlin">data class User(val email: String, val id: Int)
+
+val userGen = Gen.bind(Gen.string(), Gen.positiveIntegers(), ::User)
+
+assertAll(userGen) {
+  it.email shouldNotBe null
+  it.id should beGreaterThan(0)
+}
+</code></pre>
+<ul>
+<li><strong>Property Testing: Classify</strong></li>
+</ul>
+<p>When using property testing, it can be useful to see the distribution of values generated, to ensure you're getting
+ a good spread of values and not just trival ones. For example, you might want to run a test on a String and you want to
+ ensure you're getting good amounts of strings with whitespace.</p>
+<p>To generate stats on the distribution, use classify with a predicate, a label if the predicate passes, and a label
+ if the predicate fails. For example:</p>
+<pre><code class="language-kotlin">assertAll(Gen.string()) { a -&gt;
+    classify(a.contains(&quot; &quot;), &quot;has whitespace&quot;, &quot;no whitespace&quot;)
+    // some test
+}
+</code></pre>
+<p>And this will output something like:</p>
+<pre><code>63.70% no whitespace
+36.30% has whitespace
+</code></pre>
+<p>So we can see we're getting a good spread of both types of value.</p>
+<p>You don't have to include two labels if you just wish to tag the "true" case, and you can include more than one
+ classification. For example:</p>
+<pre><code class="language-kotlin">forAll(Gen.int()) { a -&gt;
+    classify(a == 0, &quot;zero&quot;)
+    classify(a % 2 == 0, &quot;even number&quot;, &quot;odd number&quot;)
+    a + a == 2 * a
+}
+</code></pre>
+<p>This will output something like:</p>
+<pre><code>51.60% even number
+48.40% odd number
+0.10% zero
+</code></pre>
+<ul>
+<li>
+<p><strong>Property Testing: Shrinking</strong></p>
+</li>
+<li>
+<p><strong>Tag Extensions</strong></p>
+</li>
+</ul>
+<p>A new type of extension has been added called <code>TagExtension</code>. Implementations can override the <code>tags()</code> function
+defined in this interface to dynamically return the <code>Tag</code> instances that should be active at any moment. The existing
+system properties <code>kotlintest.tags.include</code> and <code>kotlintest.tags.exclude</code> are still valid and are not deprecated, but
+adding this new extension means extended scope for more complicated logic at runtime.</p>
+<p>An example might be to disable any Hadoop tests when not running in an environment that doesn't have the hadoop
+home env variable set. After creating a <code>TagExtension</code> it must be registered with the project config.</p>
+<pre><code class="language-kotlin">object Hadoop : Tag()
+
+object HadoopTagExtension : TagExtension {
+  override fun tags(): Tags =
+      if (System.getenv().containsKey(&quot;HADOOP_HOME&quot;)) Tags.include(Hadoop) else Tags.exclude(Hadoop)
+}
+
+object MyProjectConfig : AbstractProjectConfig() {
+  override fun extensions(): List&lt;Extension&gt; = listOf(HadoopTagExtension)
+}
+
+object SimpleTest : StringSpec({
+  &quot;simple test&quot; {
+    // this test would only run on environments that have hadoop configured
+  }.config(tags = setOf(Hadoop))
+})
+</code></pre>
+<ul>
+<li><strong>Discovery Extensions: instantiate()</strong></li>
+</ul>
+<p>Inside the <code>DiscoveryExtension</code> interface the function <code>fun &lt;T : Spec&gt; instantiate(clazz: KClass&lt;T&gt;): Spec?</code> has been added which
+allows you to extend the way new instances of <code>Spec</code> are created. By default, a no-args constructor is assumed. However, if this
+function is overridden then it's possible to support <code>Spec</code> classes which have other constructors. For example, the Spring module
+now supports constructor injection using this extension. Other use cases might be when you want to always inject some config class,
+or if you want to ensure that all your tests extend some custom interface or superclass.</p>
+<p>As a reminder, <code>DiscoveryExtension</code> instances are added to Project config.</p>
+<ul>
+<li><strong>System out / error extensions</strong></li>
+</ul>
+<p>An extension that allows you to test for a function that writes to System.out or System.err. To use this extension add
+ the module <code>kotlintest-extensions-system</code> to your build.</p>
+<p>By adding the <code>NoSystemOutListener</code> or <code>NoSystemErrListener</code> to your config or spec classes, anytime a function tries to write
+ to either of these streams, a <code>SystemOutWriteException</code> or <code>SystemErrWriteException</code> will be raised with the string that
+ the function tried to write. This allows you to test for the exception in your code.</p>
+<p>For example:</p>
+<pre><code class="language-kotlin">class NoSystemOutOrErrTest : StringSpec() {
+
+  override fun listeners() = listOf(NoSystemOutListener, NoSystemErrListener)
+
+  init {
+
+    &quot;System.out should throw an exception when the listener is added&quot; {
+      shouldThrow&lt;SystemOutWriteException&gt; {
+        System.out.println(&quot;boom&quot;)
+      }.str shouldBe &quot;boom&quot;
+    }
+
+    &quot;System.err should throw an exception when the listener is added&quot; {
+      shouldThrow&lt;SystemErrWriteException&gt; {
+        System.err.println(&quot;boom&quot;)
+      }.str shouldBe &quot;boom&quot;
+    }
+  }
+}
+</code></pre>
+<ul>
+<li><strong>System.exit extension</strong></li>
+</ul>
+<p>Another extension that is part of the <code>kotlintest-extensions-system</code> module. This extension will allow you to test
+ if <code>System.exit(Int)</code> is invoked in a function. It achieves this by intercepting any calls to System.exit and instead
+ of terminating the JVM, it will throw a <code>SystemExitException</code> with the exit code.</p>
+<p>For example:</p>
+<pre><code class="language-kotlin">class SystemExitTest : StringSpec() {
+
+  override fun listeners() = listOf(SpecSystemExitListener)
+
+  init {
+
+    &quot;System.exit should throw an exception when the listener is added&quot; {
+      shouldThrow&lt;SystemExitException&gt; {
+        System.exit(123)
+      }.exitCode shouldBe 123
+    }
+  }
+}
+</code></pre>
+<ul>
+<li><strong>Spring Module Updates</strong></li>
+</ul>
+<p>The spring extension module <code>kotlintest-extensions-spring</code> has been updated to allow for constructor injection.
+This new extension is called <code>SpringAutowireConstructorExtension</code> and must be added to your `ProjectConfig.
+Then you can use injected dependencies directly in the primary constructor of your test class.</p>
+<p>For example:</p>
+<pre><code class="language-kotlin">@ContextConfiguration(classes = [(Components::class)])
+class SpringAutowiredConstructorTest(service: UserService) : WordSpec({
+  &quot;SpringListener&quot; should {
+    &quot;have autowired the service&quot; {
+      service.repository.findUser().name shouldBe &quot;system_user&quot;
+    }
+  }
+})
+</code></pre>
+<ul>
+<li><strong>JUnit 4 Runner</strong></li>
+</ul>
+<p>A JUnit 4 runner has been added which allows KotlinTest to run using the legacy JUnit 4 platform.
+To use this, add <code>kotlintest-runner-junit4</code> to your build instead of <code>kotlintest-runner-junit5</code>.</p>
+<p>Note: This is intended for use when junit5 cannot be used.
+It should not be the first choice as functionality is restricted.</p>
+<p>Namely:</p>
+<ul>
+<li>In intellij, test output will not be nested</li>
+<li>Project wide beforeAll/afterAll cannot be supported.</li>
+</ul>
+<h2 id="version-30x-march-29-2018">Version 3.0.x - March 29 2018</h2>
+<ul>
+<li><strong>Module split out</strong></li>
+</ul>
+<p>KotlinTest has been split into multiple modules. These include core, assertions, the junit runner, and extensions such as spring,
+allure and junit-xml.</p>
+<p>The idea is that in a future release, further runners could be added (TestNG) or for JS support (once multi-platform Kotlin is out of beta).
+When upgrading you will typically want to add the  <code>kotlintest-core</code>,  <code>kotlintest-assertions</code> and <code>kotlintest-runner-junit5</code> to your build
+rather than the old <code>kotlintest</code> module which is now defunct. When upgrading, you might find that you need to update imports
+to some matchers.</p>
+<pre><code>testCompile 'io.kotlintest:kotlintest-core:3.0.0'
+testCompile 'io.kotlintest:kotlintest-assertions:3.0.0'
+testCompile 'io.kotlintest:kotlintest-runner-junit5:3.0.0'
+</code></pre>
+<p>Gradle Users:</p>
+<p>Also you <em>must</em> include <code>apply plugin: 'org.junit.platform.gradle.plugin'</code> in your project and
+<code>classpath "org.junit.platform:junit-platform-gradle-plugin:1.1.0"</code> to the <code>dependencies</code> section of your <code>buildscript</code>
+or tests will not run (or worse, will hang). This allows gradle to execute
+<em>jUnit-platform-5</em> based tests (which KotlinTest builds upon). Note: Gradle says that this is <strong>not</strong> required as of 4.6 but even
+with 4.6 it seems to be required.</p>
+<p>Maven users:</p>
+<p>You need to include the following in your plugins:</p>
+<pre><code class="language-xml">&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+    &lt;version&gt;2.19.1&lt;/version&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.junit.platform&lt;/groupId&gt;
+            &lt;artifactId&gt;junit-platform-surefire-provider&lt;/artifactId&gt;
+            &lt;version&gt;1.1.0&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/plugin&gt;
+</code></pre>
+<p>And you must include</p>
+<pre><code class="language-xml">        &lt;dependency&gt;
+            &lt;groupId&gt;io.kotlintest&lt;/groupId&gt;
+            &lt;artifactId&gt;kotlintest-runner-junit5&lt;/artifactId&gt;
+            &lt;version&gt;${kotlintest.version}&lt;/version&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+</code></pre>
+<p>as a regular dependency.</p>
+<ul>
+<li><strong>Breaking: ProjectConfig</strong></li>
+</ul>
+<p>Project wide config in KotlinTest is controlled by implementing a subclass of <code>AbstractProjectConfig</code>. In previous versions you could
+call this what you wanted, and place it where you wanted, and <code>KotlinTest</code> would attempt to find it and use it. This was the cause of
+many bug reports about project start up times and reflection errors. So in version 3.0.x onwards, KotlinTest will
+no longer attempt to scan the classpath.</p>
+<p>Instead you must call this class <code>ProjectConfig</code> and place it in a package <code>io.kotlintest.provided</code>. It must still be a subclass of
+<code>AbstractProjectConfig</code> This means kotlintest can do a simple <code>Class.forName</code> to find it, and so there is no
+ startup penalty nor reflection issues.</p>
+<p>Project config now allows you to register multiple types of extensions and listeners, as well as setting parallelism.</p>
+<ul>
+<li><strong>Breaking: Interceptors have been deprecated and replaced with Listeners</strong></li>
+</ul>
+<p>The previous <code>inteceptors</code> were sometimes confusing. You had to invoke the continuation function or the spec/test
+would not execute. Not invoking the function didn't mean the spec/test was skipped, but that it would hang.</p>
+<p>So interceptors are deprecated, and in some places removed. Those are not removed are now located in classes called
+<code>SpecExtension</code> and <code>TestCaseExtension</code> and those interfaces should be used rather than functions directly.</p>
+<p>Here is an example of a migrated interceptor.</p>
+<pre><code class="language-kotlin">val mySpecExtension = object : SpecExtension {
+    override fun intercept(spec: Spec, process: () -&gt; Unit) {
+      println(&quot;Before spec!&quot;)
+      process()
+      println(&quot;After spec!&quot;)
+    }
+}
+</code></pre>
+<p>As a replacement, in 3.0.0 we've added the <code>TestListener</code> interface which is the more traditional before/after style callbacks.
+In addition, these methods include the result of the test (success, fail, error, skipped) which gives you more
+context in writing plugins. The <code>TestListener</code> interface offers everything the old interceptors could do, and more.</p>
+<p>Here is an example of a simple listener.</p>
+<pre><code class="language-kotlin">object TimeTracker : TestListener {
+
+  var started = 0L
+
+  override fun beforeTest(description: Description) {
+    TimeTrackerTest.started = System.currentTimeMillis()
+  }
+
+  override fun afterTest(description: Description, result: TestResult) {
+    val duration = System.currentTimeMillis() - TimeTrackerTest.started
+    println(&quot;Test ${description.fullName()} took ${duration}ms&quot;)
+  }
+}
+</code></pre>
+<p>If you want to use these methods in a Spec itself, then you can just override the functions
+ directly because a Spec is already a TestListener.</p>
+<pre><code class="language-kotlin">object TimeTracker : WordSpec() {
+
+  var started = 0L
+
+  override fun beforeTest(description: Description) {
+    started = System.currentTimeMillis()
+  }
+
+  override fun afterTest(description: Description, result: TestResult) {
+    val duration = System.currentTimeMillis() - started
+    println(&quot;Test ${description.fullName()} took ${duration}ms&quot;)
+  }
+
+  init {
+    &quot;some test&quot; should {
+      &quot;be timed&quot; {
+        // test here
+      }
+    }
+  }
+}
+</code></pre>
+<p>Listeners can be added project wide by overriding <code>listeners()</code> in the <code>ProjectConfig</code>.</p>
+<p>Note: In the next release, new <code>Extension</code> functions will be added which will be similar to the old interceptors, but with
+ complete control over the lifecycle. For instance, a future intercept method will enforce that the user skip, run or abort a test
+ in the around advice. They will be more complex, and so suited to more advanced use cases. The new <code>TestListener</code> interface will remain of course, and is the preferred option.</p>
+<ul>
+<li><strong>Parallelism</strong></li>
+</ul>
+<p>If you want to run more than one spec class in parallel, you can by overriding <code>parallelism</code> inside your projects
+<code>ProjectConfig</code> or by supplying the system property <code>kotlintest.parallelism</code>.</p>
+<p>Note the system property always takes precedence over the config.</p>
+<ul>
+<li><strong>Futures Support</strong></li>
+</ul>
+<p>Test cases now support waiting on futures in a neat way. If you have a value in a <code>CompletableFuture</code> that you want
+to test against once it completes, then you can do this like this:</p>
+<pre><code class="language-kotlin">val stringFuture: CompletableFuture&lt;String&gt; = ...
+
+&quot;My future test&quot; should {
+  &quot;support CompletableFuture&lt;T&gt;&quot; {
+    whenReady(stringFuture) {
+      it shouldBe &quot;wibble&quot;
+    }
+  }
+}
+</code></pre>
+<ul>
+<li><strong>Breaking: Exception Matcher Changes</strong></li>
+</ul>
+<p>The <code>shouldThrow&lt;T&gt;</code> method has been changed to also test for subclasses. For example, <code>shouldThrow&lt;IOException&gt;</code> will also match
+exceptions of type <code>FileNotFoundException</code>. This is different to the behavior in all previous KotlinTest versions. If you wish to
+have functionality as before - testing exactly for that type - then you can use the newly added <code>shouldThrowExactly&lt;T&gt;</code>.</p>
+<ul>
+<li><strong>JUnit XML Module</strong></li>
+</ul>
+<p>Support for writing out reports in junit-format XML has added via the <code>kotlintest-extensions-junitxml</code> module which you will need to add to your build. This module
+provides a <code>JUnitXmlListener</code> which you can register with your project to autowire your tests. You can register this by overriding
+<code>listeners()</code> in <code>ProjectConfig</code>.</p>
+<pre><code class="language-kotlin">class ProjectConfig : AbstractProjectConfig() {
+    override fun listeners() = listOf(JUnitXmlListener)
+}
+</code></pre>
+<ul>
+<li><strong>Spring Module</strong></li>
+</ul>
+<p>Spring support has been added via the <code>kotlintest-extensions-spring</code> module which you will need to add to your build. This module
+provides a <code>SpringListener</code> which you can register with your project to autowire your tests. You can register this for just some classes
+by overriding the <code>listeners()</code> function inside your spec, for example:</p>
+<pre><code class="language-kotlin">class MySpec : ParentSpec() {
+    override fun listeners() = listOf(SpringListener)
+}
+</code></pre>
+<p>Or you can register this for all classes by adding it to the <code>ProjectConfig</code>. See the section on <em>ProjectConfig</em> for how
+to do this.</p>
+<ul>
+<li><strong>Breaking: Tag System Property Rename</strong></li>
+</ul>
+<p>The system property used to include/exclude tags has been renamed to <code>kotlintest.tags.include</code> and <code>kotlintest.tags.exclude</code>. Make
+sure you update your build jobs to set the right properties as the old ones no longer have any effect. If the old tags are detected
+then a warning message will be emitted on startup.</p>
+<ul>
+<li><strong>New Matchers</strong></li>
+</ul>
+<p><code>beInstanceOf&lt;T&gt;</code> has been added to easily test that a class is an instance of T. This is in addition to the more verbose <code>beInstanceOf(SomeType::class)</code>.</p>
+<p>The following matchers have been added for maps: <code>containAll</code>, <code>haveKeys</code>, <code>haveValues</code>. These will output helpful error messages showing you
+which keys/values or entries were missing.</p>
+<p>New matchers added for Strings: <code>haveSameLengthAs(other)</code>, <code>beEmpty()</code>, <code>beBlank()</code>, <code>containOnlyDigits()</code>, <code>containADigit()</code>, <code>containIgnoringCase(substring)</code>,
+<code>lowerCase()</code>, <code>upperCase()</code>.</p>
+<p>New matchers for URIs: <code>haveHost(hostname)</code>, <code>havePort(port)</code>, <code>haveScheme(scheme)</code>.</p>
+<p>New matchers for collections: <code>containNoNulls()</code>, <code>containOnlyNulls()</code></p>
+<ul>
+<li><strong>Breaking: One instance per test changes</strong></li>
+</ul>
+<p>One instance per test is no longer supported for specs which offer <em>nested scopes</em>. For example, <code>WordSpec</code>. This is because of the tricky
+nature of having nested closures work across fresh instances of the spec. When using one instance per test, a fresh spec class is required
+for each test, but that means selectively executing some closures and not others in order to ensure the correct state. This has proved
+the largest source of bugs in previous versions.</p>
+<p>KotlinTest 3.0.x takes a simplified approach. If you want the flexibilty to lay out your tests with nested scopes, then all tests will
+execute in the same instance (like Spek and ScalaTest). If you want each test to have it's own instance (like jUnit) then you can either
+split up your tests into multiple files, or use a "flat" spec like <code>FunSpec</code> or <code>StringSpec</code>.</p>
+<p>This keeps the implementation an order of magnitude simplier (and therefore less likely to lead to bugs) while offering a pragmatic approach
+to keeping both sets of fans happy.</p>
+<ul>
+<li><strong>New Specs</strong></li>
+</ul>
+<p>Multiple new specs have been added. These are: <code>AnnotationSpec</code>, <code>DescribeSpec</code> and <code>ExpectSpec</code>. Expect spec allows you to use the <code>context</code>
+and <code>expect</code> keywords in your tests, like so:</p>
+<pre><code class="language-kotlin">class ExpectSpecExample : ExpectSpec() {
+  init {
+    context(&quot;some context&quot;) {
+      expect(&quot;some test&quot;) {
+        // test here
+      }
+      context(&quot;nested context even&quot;) {
+        expect(&quot;some test&quot;) {
+          // test here
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<p>The <code>AnnotationSpec</code> offers functionality to mimic jUnit, in that tests are simply functions annotated with <code>@io.kotlintest.specs.Test</code>. For example:</p>
+<pre><code class="language-kotlin">class AnnotationSpecExample : AnnotationSpec() {
+
+  @Test
+  fun test1() {
+
+  }
+
+  @Test
+  fun test2() {
+
+  }
+}
+</code></pre>
+<p>And finally, the <code>DescribeSpec</code> is similar to SpekFramework, using <code>describe</code>, <code>and</code>, and <code>it</code>. This makes it very useful for those people who are looking
+to migrate to KotlinTest from SpekFramework.</p>
+<pre><code class="language-kotlin">class DescribeSpecExample : DescribeSpec() {
+  init {
+    describe(&quot;some context&quot;) {
+      it(&quot;test name&quot;) {
+        // test here
+      }
+      describe(&quot;nested contexts&quot;) {
+        and(&quot;another context&quot;) {
+          it(&quot;test name&quot;) {
+            // test here
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<ul>
+<li><strong>Property Testing with Matchers</strong></li>
+</ul>
+<p>The ability to use matchers in property testing has been added. Previously property testing worked only with functions that returned a Boolean, like:</p>
+<pre><code class="language-kotlin">&quot;startsWith&quot; {
+  forAll(Gen.string(), Gen.string(), { a, b -&gt;
+    (a + b).startsWith(a)
+  })
+}
+</code></pre>
+<p>But now you can use <code>assertAll</code> and <code>assertNone</code> and then use regular matchers inside the block. For example:</p>
+<pre><code class="language-kotlin">&quot;startsWith&quot; {
+  assertAll(Gen.string(), Gen.string(), { a, b -&gt;
+    a + b should startWith(a)
+  })
+}
+</code></pre>
+<p>This gives you the ability to use multiple matchers inside the same block, and not have to worry about combining all possible errors
+into a single boolean result.</p>
+<ul>
+<li><strong>Generator Edge Cases</strong></li>
+</ul>
+<p>Staying with property testing - the <em>Generator</em> interface has been changed to now provide two types of data.</p>
+<p>The first are values that should always be included - those edge cases values which are common sources of bugs.
+For example, a generator for Ints should always include values like zero, minus 1, positive 1, Integer.MAX_VALUE and Integer.MIN_VALUE.
+Another example would be for a generator for enums. That should include <em>all</em> the values of the enum to ensure
+each value is tested.</p>
+<p>The second set of values are random values, which are used to give us a greater breadth of values tested.
+The Int generator should return random ints from across the entire integer range.</p>
+<p>Previously generators used by property testing would only include random values, which meant you were very unlikely to see the
+edge cases that usually cause issues - like the aforementioned Integer MAX / MIN. Now you are guaranteed to get the edge
+cases first and the random values afterwards.</p>
+<ul>
+<li><strong>Breaking: MockitoSugar removed</strong></li>
+</ul>
+<p>This interface added a couple of helpers for Mockito, and was used primarily before Kotlin specific mocking libraries appeared.
+Now there is little value in this mini-wrapper so it was removed. Simply add whatever mocking library you like to your build
+and use it as normal.</p>
+<ul>
+<li><strong>CsvDataSource</strong></li>
+</ul>
+<p>This class has been added for loading data for table testing. A simple example:</p>
+<pre><code class="language-kotlin">class CsvDataSourceTest : WordSpec() {
+  init {
+
+    &quot;CsvDataSource&quot; should {
+      &quot;read data from csv file&quot; {
+
+        val source = CsvDataSource(javaClass.getResourceAsStream(&quot;/user_data.csv&quot;), CsvFormat())
+
+        val table = source.createTable&lt;Long, String, String&gt;(
+            { it: Record -&gt; Row3(it.getLong(&quot;id&quot;), it.getString(&quot;name&quot;), it.getString(&quot;location&quot;)) },
+            { it: Array&lt;String&gt; -&gt; Headers3(it[0], it[1], it[2]) }
+        )
+
+        forAll(table) { a, b, c -&gt;
+          a shouldBe gt(0)
+          b shouldNotBe null
+          c shouldNotBe null
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<ul>
+<li><strong>Matcher Negation Errors</strong></li>
+</ul>
+<p>All matchers now have the ability to report a better error when used with <code>shouldNot</code> and <code>shouldNotBe</code>. Previously a generic error
+was generated - which was usually the normal error but with a prefix like "NOT:" but now each built in matcher will provide a full message, for example: <code>Collection should not contain element 'foo'</code></p>
+<h2 id="version-200-released-2017-03-26">Version 2.0.0, released 2017-03-26</h2>
+<p><a href="https://github.com/kotlintest/kotlintest/milestone/4?closed=1">Closed Issues</a></p>
+<h3 id="added">Added</h3>
+<ul>
+<li>You can write tests alternatively into a lambda parameter in the class constructor, eg:</li>
+</ul>
+<pre><code class="language-kotlin">class StringSpecExample : StringSpec({
+  &quot;strings.size should return size of string&quot; {
+    &quot;hello&quot;.length shouldBe 5
+    &quot;hello&quot; should haveLength(5)
+  }
+})
+</code></pre>
+<ul>
+<li>Added <code>forNone</code> for table tests, eg</li>
+</ul>
+<pre><code class="language-kotlin">val table = table(
+    headers(&quot;a&quot;, &quot;b&quot;),
+    row(0L, 2L),
+    row(2L, 2L),
+    row(4L, 5L),
+    row(4L, 6L)
+)
+
+forNone(table) { a, b -&gt;
+  3 shouldBe between(a, b)
+}
+</code></pre>
+<ul>
+<li>
+<p>Interceptors have been added. Interceptors allow code to be executed before and after a test. See the main readme for more info.</p>
+</li>
+<li>
+<p>Simplified ability to add custom matchers. Simple implement <code>Matcher&lt;T&gt;</code> interface. See readme for more information.</p>
+</li>
+<li>
+<p>Added <code>shouldNot</code> to invert matchers. Eg, <code>"hello" shouldNot include("hallo")</code></p>
+</li>
+<li>
+<p>Deprecated matchers which do not implement Matcher<T>. Eg, <code>should have substring(x)</code> has been deprecated in favour of <code>"hello" should include("l")</code>. This is because instances of Matcher<T> can be combined with <code>or</code> and <code>and</code> and can be negated with <code>shouldNot</code>.</p>
+</li>
+<li>
+<p>Added <code>between</code> matcher for int and long, eg</p>
+</li>
+</ul>
+<p><code>3 shouldBe between(2, 5)</code></p>
+<ul>
+<li>Added <code>singleElement</code> matcher for collections, eg</li>
+</ul>
+<p><code>x shouldBe singleElement(y)</code></p>
+<ul>
+<li>Added <code>sorted</code> matcher for collections, eg</li>
+</ul>
+<p><code>listOf(1,2,3) shouldBe sorted&lt;Int&gt;()</code></p>
+<ul>
+<li>
+<p>Now supports comparsion of arrays <a href="https://github.com/kotest/kotest/issues/116">#116</a></p>
+</li>
+<li>
+<p>Added Gen.oneOf<Enum> to create a generator that returns one of the values for the given Enum class.</p>
+</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Tags are objects derived from <code>Tag</code> class now.</li>
+<li>Tags can now be included and/or exluded. It is no longer the case that all untagged tests are
+always executed.</li>
+<li>Fixed bugs with parenthesis breaking layout in Intellij #112</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>FlatSpec was removed because it has an irregular syntax with <code>config</code> and is essentially the same
+as StringSpec, but more complicated.</li>
+<li>Deprecated method overloads with <code>duration: Long, unit: TimeUnit</code></li>
+<li><code>expecting</code> for testing exceptions (use shouldThrow now)</li>
+</ul>
+<h2 id="version-132-released-2016-07-05">Version 1.3.2, released 2016-07-05</h2>
+<h3 id="changed_1">Changed</h3>
+<ul>
+<li>
+<p>Added <code>a shouldBe exactly(b)</code> matcher for doubles</p>
+</li>
+<li>
+<p><code>kotlintest</code> only pulls in <code>mockito-core</code> now instead of <code>mockito-all</code></p>
+</li>
+</ul>
+<h2 id="version-131-released-2016-07-03">Version 1.3.1, released 2016-07-03</h2>
+<h3 id="changed_2">Changed</h3>
+<ul>
+<li>Bumped Kotlin version to 1.0.3</li>
+</ul>
+<h2 id="version-130-released-2016-07-03">Version 1.3.0, released 2016-07-03</h2>
+<p><a href="https://github.com/kotlintest/kotlintest/issues?utf8=%E2%9C%93&amp;q=is%3Aclosed+milestone%3A2.0">Closed Issues</a></p>
+<h3 id="added_1">Added</h3>
+<ul>
+<li>StringSpec. You can use simply use Strings as the basis for tests, eg:</li>
+</ul>
+<pre><code class="language-kotlin">class StringSpecExample : StringSpec() {
+  init {
+    &quot;strings.size should return size of string&quot; {
+      &quot;hello&quot;.length shouldBe 5
+      &quot;hello&quot; should haveLength(5)
+    }
+
+    &quot;strings should support config&quot; {
+      &quot;hello&quot;.length shouldBe 5
+    }.config(invocations = 5)
+  }
+}
+</code></pre>
+<ul>
+<li>Table Tests. Tables allow you to manually specific combinations of values that should be used, and are useful for
+edge cases and other specific values you want to test. The headers are used for when values fail,
+the output can show you what inputs were used for what labels. An example of using a table consisting of two-value tuples:</li>
+</ul>
+<pre><code class="language-kotlin">class TableExample : StringSpec(), TableTesting {
+  init {
+    &quot;numbers should be prime&quot; {
+      val table = table(
+          headers(&quot;a&quot;, &quot;b&quot;),
+          row(5, 5),
+          row(4, 6),
+          row(3, 7)
+      )
+      forAll(table) { a, b -&gt;
+        a + b == 10
+      }
+    }
+  }
+}
+</code></pre>
+<ul>
+<li>Property tests. Property tests automatically generate values for testings. You provide, or have KotlinTest provide for you, <code>generators</code>, which will generate a set of values and the unit test will be executed for each of those values. An example using two strings and asserting that the lengths are correct:</li>
+</ul>
+<pre><code class="language-kotlin">class PropertyExample: StringSpec() {
+
+  &quot;String size&quot; {
+    forAll({ a: String, b: String -&gt;
+      (a + b).length == a.length + b.length
+    })
+  }
+
+}
+</code></pre>
+<p>That test will be executed 100 times with random values in each test. See more in the readme.</p>
+<ul>
+<li>autoClose. Fields of type <code>Closeable</code> can be registered for automatic resource closing:</li>
+</ul>
+<pre><code class="language-kotlin">class StringSpecExample : StringSpec() {
+  val reader = autoClose(StringReader(&quot;xyz&quot;))
+
+  ...
+}
+</code></pre>
+<ul>
+<li><code>haveLength</code> matcher. You can now write for strings:</li>
+</ul>
+<pre><code class="language-kotlin">someString should haveLength(10)
+</code></pre>
+<ul>
+<li><code>haveSize</code> matcher. You can now write for collections:</li>
+</ul>
+<pre><code class="language-kotlin">myCollection should haveSize(4)
+</code></pre>
+<ul>
+<li><code>contain</code> matcher. You can now write</li>
+</ul>
+<pre><code class="language-kotlin">val col = listOf(1,2,3,4,5)
+col should contain(4)
+</code></pre>
+<ul>
+<li><code>containInAnyOrder</code> matcher. You can now write</li>
+</ul>
+<pre><code class="language-kotlin">val col = listOf(1,2,3,4,5)
+col should containInAnyOrder(4,2,3)
+</code></pre>
+<ul>
+<li><code>haveKey</code> Map<K,V> matcher. You can now write</li>
+</ul>
+<pre><code class="language-kotlin">val map = mapOf(Pair(1, &quot;a&quot;), Pair(2, &quot;b&quot;))
+map should haveKey(1)
+</code></pre>
+<ul>
+<li><code>haveValue</code> Map<K,V> matcher. You can now write</li>
+</ul>
+<pre><code class="language-kotlin">val map = mapOf(Pair(1, &quot;a&quot;), Pair(2, &quot;b&quot;))
+map should haveValue(&quot;a&quot;)
+</code></pre>
+<ul>
+<li><code>contain</code> Map<K,V> matcher. You can now write</li>
+</ul>
+<pre><code class="language-kotlin">val map = mapOf(Pair(1, &quot;a&quot;), Pair(2, &quot;b&quot;))
+map should contain(1, &quot;a&quot;)
+</code></pre>
+<ul>
+<li><code>beTheSameInstanceAs</code> reference matcher. This is an alias for <code>x should be theSameInstanceAs(y)</code>, allowing <code>x should beTheSameInstanceAs(y)</code> which fits in with new matcher style.</li>
+</ul>
+<h3 id="changed_3">Changed</h3>
+<h4 id="replaced-timeout-timeunit-with-duration-29">Replaced <code>timeout</code> + <code>timeUnit</code> with <code>Duration</code> (<a href="https://github.com/kotlintest/kotlintest/issues/29">#29</a>)</h4>
+<p>You can now write <code>config(timeout = 2.seconds)</code> instead of
+<code>config(timeout = 2, timeoutUnit = TimeUnit.SECONDS)</code>.</p>
+<h3 id="deprecated">Deprecated</h3>
+<p>nothing</p>
+<h3 id="removed_1">Removed</h3>
+<p>nothing</p>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Ignored tests now display properly. https://github.com/kotlintest/kotlintest/issues/43</li>
+<li>Failing tests reported as a success AND a failure https://github.com/kotlintest/kotlintest/issues/42
+Ad</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../quick_start/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Quick start
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../styles/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Styles
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017 Kotest Team
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://kotlinlang.slack.com/?redir=%2Farchives%2FCT0G9SD7Z" target="_blank" rel="noopener" title="kotlinlang.slack.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/kotest/kotest" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['search.highlight', 'tabs'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
